@@ -29,10 +29,6 @@ public class PeopleManager : MonoBehaviour
         newPerson.transform.position = Vector3.zero;
         newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
 
-        Debug.Log("222 TEST123:" + newPerson.GetComponent<Person>());   
-        Debug.Log("222 TEST123:" + newPerson.GetComponent<Person>().feeling);
-        Debug.Log("222 TEST123:" + newPerson.GetComponent<Person>().feelingString);
-
         return newPerson;
     }
 }

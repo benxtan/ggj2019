@@ -29,17 +29,31 @@ public class Person : MonoBehaviour
     {
         this.feeling = feeling;
         _feelingString = this.feeling.ToString();
-        Debug.Log("111 New Person:" + feeling);
+        Debug.Log("New Person:" + feeling);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("OnTriggerEnter:" + other.gameObject.tag);
-        if (other.gameObject.tag == "Buildings" && other.gameObject.GetComponent<Building>().feeling != null)
+        if (other.gameObject.tag == "Buildings")
         {
-            if (other.gameObject.GetComponent<Building>().feeling.feelingType == feeling.feelingType)
+            Building building = other.gameObject.GetComponent<Building>();
+
+            if (building.feeling != null)
             {
-                Debug.Log("HOME!!!");
+                if (building.feeling.feelingType == feeling.feelingType)
+                {
+                    Debug.Log("HOME!!!");
+
+                    // Audio
+                    other.gameObject.transform.Find("Audio/Home").GetComponent<AudioSource>().Play();
+
+                    // Building - Change texture
+                    building.SetOn(true);
+
+                    // Person - Disappear
+                    Destroy(this.gameObject);
+                }
             }
         }
     }

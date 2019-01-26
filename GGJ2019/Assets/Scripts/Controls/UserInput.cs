@@ -59,7 +59,7 @@ public class UserInput : MonoBehaviour {
         //movement.y -= ResourceManager.ScrollSpeed * Input.GetAxis("Mouse ScrollWheel");
         if (Input.GetAxis("Mouse ScrollWheel") < 0) // back
         {
-            Camera.main.orthographicSize = Mathf.Min(Camera.main.orthographicSize + 0.5f, 6f);
+            Camera.main.orthographicSize = Mathf.Min(Camera.main.orthographicSize + 0.5f, 10f);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0) // forward
         {

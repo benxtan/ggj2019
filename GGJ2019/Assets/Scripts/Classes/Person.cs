@@ -5,15 +5,12 @@ public class Person : MonoBehaviour
     public float health;
     public Feeling feeling;
 
+    [SerializeField]
+    private string _feelingString;   // This is visible in the Inspector
     public string feelingString
     {
-        get
-        {
+        get {
             return feeling.ToString();
-        }
-        set
-        {
-
         }
     }
 
@@ -25,5 +22,11 @@ public class Person : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void InitPerson(Feeling feeling)
+    {
+        feeling = FeelingManager.GetRandomFeeling();
+        _feelingString = feeling.ToString();
     }
 }

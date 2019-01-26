@@ -26,8 +26,8 @@ public class PeopleManager : MonoBehaviour
         GameObject newPerson = Instantiate(person);
         newPerson.transform.parent = people.transform;
         newPerson.transform.position = Vector3.zero;
-        newPerson.GetComponent<Person>().feeling = FeelingManager.GetRandomFeeling();
-        Debug.Log(newPerson.GetComponent<Person>().feelingString);
+        newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
+        //Debug.Log(newPerson.GetComponent<Person>().feelingString);
 
         return newPerson;
     }

@@ -45,7 +45,7 @@ public class WanderAI : MonoBehaviour
 
         // Displays the navmesh target when selected
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(this.target, 0.2f);
+        Gizmos.DrawSphere(this.target, 2.0f);
     }
 
     public Vector3 RandomNavMeshLocation(float radius, NavMeshAgent agent)

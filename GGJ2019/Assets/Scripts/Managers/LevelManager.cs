@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
             for (int i = 0; i < 10; i++)
             {
                 GameObject person = PeopleManager.CreatePerson();
-                BuildingManager.CreateHomeFor(person);
+                //BuildingManager.CreateHomeFor(person);
             }
         }
     }

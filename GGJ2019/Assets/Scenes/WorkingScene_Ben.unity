@@ -348,7 +348,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &191256057
@@ -983,7 +983,7 @@ MonoBehaviour:
   isTriggered: 0
   rotateObject: 0
   obstacleDeathTime: 0
-  name: Tree
+  obstacleName: 
   startState: {fileID: 0}
   endState: {fileID: 0}
   navObstacle: {fileID: 0}
@@ -1484,7 +1484,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &736495938
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   isTriggered: 0
   rotateObject: 0
   obstacleDeathTime: 0
-  name: Tree
+  obstacleName: 
   startState: {fileID: 0}
   endState: {fileID: 0}
   navObstacle: {fileID: 0}
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   isTriggered: 0
   rotateObject: 0
   obstacleDeathTime: 0
-  name: 
+  obstacleName: 
   startState: {fileID: 116276273}
   endState: {fileID: 721213793}
   navObstacle: {fileID: 1348933624}
@@ -4157,7 +4157,7 @@ MonoBehaviour:
   isTriggered: 0
   rotateObject: 1
   obstacleDeathTime: 10
-  name: Tree
+  obstacleName: 
   startState: {fileID: 492534667}
   endState: {fileID: 1019711544}
   navObstacle: {fileID: 0}

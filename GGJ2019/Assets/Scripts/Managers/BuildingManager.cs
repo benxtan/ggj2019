@@ -25,7 +25,7 @@ public class BuildingManager : MonoBehaviour
     public static GameObject CreateHomeFor(GameObject person)
     {
         GameObject[] emptyBuildings = GetEmptyBuildings();
-        Debug.Log(emptyBuildings.Length);
+        //Debug.Log(emptyBuildings.Length);
 
         if (emptyBuildings.Length == 0)
         {
@@ -36,6 +36,8 @@ public class BuildingManager : MonoBehaviour
         Feeling feeling = person.GetComponent<Person>().feeling;
 
         GameObject building = buildings[Random.Range(0, emptyBuildings.Length)];
+
+        //Debug.Log(building.name + " " + building.GetComponent<Building>().IsEmpty());
         building.GetComponent<Building>().feeling = feeling;
         //Debug.Log("New Building:" + feeling.ToString());
 
@@ -44,6 +46,9 @@ public class BuildingManager : MonoBehaviour
 
     public static GameObject[] GetEmptyBuildings()
     {
+        GameObject[] buildings = GameObject.FindGameObjectsWithTag("Buildings");
+        string test = "";
+
         List<GameObject> emptyBuildings = new List<GameObject>();
         for (int i = 0; i < buildings.Length; i++)
         {
@@ -51,7 +56,11 @@ public class BuildingManager : MonoBehaviour
             {
                 emptyBuildings.Add(buildings[i]);
             }
+
+            test += buildings[i].GetComponent<Building>().IsEmpty() ? "_" : "X"; 
         }
+
+        Debug.Log(test);
 
         return emptyBuildings.ToArray();
     }

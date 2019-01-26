@@ -32,9 +32,9 @@ public class PeopleManager : MonoBehaviour
 
     public static Vector3 GetRandomPosition()
     {
-        float radius = 20;
+        float radius = 10;
         Vector3 randomDirection = Random.insideUnitSphere * radius;
-        //randomDirection += newPerson.transform.position;
+        randomDirection += new Vector3(25, 0, -35);   // Centre of 25x25 grid town
 
         NavMeshHit hit;
         Vector3 randomPosition = Vector3.zero;

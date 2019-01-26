@@ -57,10 +57,4 @@ public class Person : MonoBehaviour
             }
         }
     }
-
-    /*void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("OnCollisionEnter");
-        Debug.Log(collision);
-    }*/
 }

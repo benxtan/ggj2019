@@ -6,7 +6,7 @@ public class FeelingManager : MonoBehaviour
     {
         Beer,
         Fish,
-        Dog,
+        Love,
     }
 
     // Start is called before the first frame update

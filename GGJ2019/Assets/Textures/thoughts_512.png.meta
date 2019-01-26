@@ -6,12 +6,16 @@ TextureImporter:
     21300002: Bubble - Building
     21300004: Icon - Beer
     21300006: Bubble - Person
-    21300008: thoughts_512_4
+    21300008: Love
     21300010: thoughts_512_5
     21300012: thoughts_512_6
     21300014: thoughts_512_7
     21300016: Icon - Beer
     21300018: Icon - Fish
+    21300020: Bubble - Person
+    21300022: Bubble - Building
+    21300024: Beer
+    21300026: Fish
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -124,13 +128,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f250c4cccce5728479ae200aabd13da1
+      spriteID: 8fea9b8feef0f304087fa77a3356d425
       vertices: []
       indices: 
       edges: []
@@ -144,19 +148,19 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3aab8c21b3ebd34aabafd2b12318338
+      spriteID: 2182569d4e4988c4ebb404eab1002849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon - Beer
+      name: Beer
       rect:
         serializedVersion: 2
         x: 0
@@ -164,19 +168,19 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86a8fe515b5ed0f419af64af13569dcc
+      spriteID: 31084361fd6fe35418b2e4d5191d4077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon - Fish
+      name: Fish
       rect:
         serializedVersion: 2
         x: 128
@@ -184,13 +188,33 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f157d366740256d4da679cf788306eb8
+      spriteID: 55b916bef74f8ae43b879465a32695d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Love
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c25d978868f84458b85cd4e3a83b14
       vertices: []
       indices: 
       edges: []

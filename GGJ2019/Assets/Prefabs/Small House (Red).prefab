@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d898a590639d944abd150599e54d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materials: []
 --- !u!65 &5301910845085200358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -708,6 +709,6 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

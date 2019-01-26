@@ -29,7 +29,7 @@ public class Person : MonoBehaviour
     {
         this.feeling = feeling;
         _feelingString = this.feeling.ToString();
-        Debug.Log("New Person:" + feeling);
+        //Debug.Log("New Person:" + feeling);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,7 +39,7 @@ public class Person : MonoBehaviour
         {
             Building building = other.gameObject.GetComponent<Building>();
 
-            if (building.feeling != null)
+            if (building.feeling != null && !building.isPersonHome)
             {
                 if (building.feeling.feelingType == feeling.feelingType)
                 {
@@ -48,8 +48,8 @@ public class Person : MonoBehaviour
                     // Audio
                     other.gameObject.transform.Find("Audio/Home").GetComponent<AudioSource>().Play();
 
-                    // Building - Change texture
-                    building.SetOn(true);
+                    // Building
+                    building.SetPersonHome();
 
                     // Person - Disappear
                     Destroy(this.gameObject);

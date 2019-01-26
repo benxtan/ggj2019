@@ -12,6 +12,8 @@ public class Building : MonoBehaviour
     // On  - Top
     public Material[] materials;
 
+    public bool isPersonHome = false;
+
     private Feeling _feeling;
     public Feeling feeling
     {
@@ -38,8 +40,15 @@ public class Building : MonoBehaviour
     {
     }
 
-    public void SetOn(bool isOn)
+    public bool IsEmpty()
     {
+        return feeling == null;
+    }
+
+    public void SetPersonHome()
+    {
+        isPersonHome = true;
+
         transform.Find("Bubble").gameObject.SetActive(false);
 
         transform.Find("Left").GetComponent<Renderer>().material = materials[3];

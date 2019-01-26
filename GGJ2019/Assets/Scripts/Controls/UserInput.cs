@@ -55,10 +55,18 @@ public class UserInput : MonoBehaviour {
         //but ignore the vertical tilt of the camera to get sensible scrolling
         movement = Camera.main.transform.TransformDirection(movement);
         movement.y = 0;
- 
+
         //away from ground movement
-        movement.y -= ResourceManager.ScrollSpeed * Input.GetAxis("Mouse ScrollWheel");
- 
+        //movement.y -= ResourceManager.ScrollSpeed * Input.GetAxis("Mouse ScrollWheel");
+        if (Input.GetAxis("Mouse ScrollWheel") < 0) // back
+        {
+            Camera.main.orthographicSize = Mathf.Min(Camera.main.orthographicSize + 0.5f, 6);
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0) // forward
+        {
+            Camera.main.orthographicSize = Mathf.Max(Camera.main.orthographicSize - 0.5f, 1);
+        }
+
         //calculate desired camera position based on received input
         Vector3 origin = Camera.main.transform.position;
         Vector3 destination = origin;

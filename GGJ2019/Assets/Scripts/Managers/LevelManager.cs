@@ -18,8 +18,11 @@ public class LevelManager : MonoBehaviour
 
         if (level == 1)
         {
-            GameObject person = PeopleManager.CreatePerson();
-            BuildingManager.CreateHomeFor(person);
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject person = PeopleManager.CreatePerson();
+                BuildingManager.CreateHomeFor(person);
+            }
         }
     }
 

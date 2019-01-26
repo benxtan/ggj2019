@@ -28,7 +28,7 @@ public class BuildingManager : MonoBehaviour
         Feeling feeling = person.GetComponent<Person>().feeling;
 
         GameObject building = buildings[Random.Range(0, buildings.Length)];
-        building = buildings[4];   // DEBUG
+        //building = buildings[4];   // DEBUG
         building.GetComponent<Building>().feeling = feeling;
         Debug.Log("New Building:" + feeling.ToString());
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using static FeelingManager;
 
 public class PeopleManager : MonoBehaviour
@@ -26,7 +27,18 @@ public class PeopleManager : MonoBehaviour
     {
         GameObject newPerson = Instantiate(person);
         newPerson.transform.parent = people.transform;
-        newPerson.transform.position = Vector3.zero;
+
+        float radius = 20;
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += newPerson.transform.position;
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+        {
+            finalPosition = hit.position;
+        }
+        newPerson.transform.position = finalPosition;
+
         newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
 
         return newPerson;

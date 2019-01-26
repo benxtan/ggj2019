@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    public float speed;
-    public float turnSpeed;
+    public float health;
     public string feeling;
 
     // Start is called before the first frame update

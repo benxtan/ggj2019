@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WanderAI : MonoBehaviour
 {
@@ -23,21 +24,24 @@ public class WanderAI : MonoBehaviour
         timer += Time.deltaTime;
 
         if (timer > wanderTimer) {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            Vector3 newPos = RandomNavMeshLocation(wanderRadius);
             agent.SetDestination(newPos);
             timer = 0;
         }
     }
     
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) {
-        Vector3 randomDirection = Random.insideUnitSphere * dist;
+ public Vector3 RandomNavMeshLocation(float radius) {
+         Vector3 randomDirection = Random.insideUnitSphere * radius;
+         randomDirection += transform.position;
 
-        randomDirection += origin;
+         NavMeshHit hit;
 
-        UnityEngine.AI.NavMeshHit navHit;
+         Vector3 finalPosition = Vector3.zero;
 
-        UnityEngine.AI.NavMesh.SamplePosition(randomDirection, out navHit, dist, layermask);
+         if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
+             finalPosition = hit.position;            
+         }
 
-        return navHit.position;
-    }
+         return finalPosition;
+     }
 }

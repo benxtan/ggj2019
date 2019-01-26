@@ -303,6 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161114849769806730}
   - component: {fileID: 1170108471589667528}
+  - component: {fileID: 5301910845085200358}
   m_Layer: 0
   m_Name: Small House (Red)
   m_TagString: Buildings
@@ -342,6 +343,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d898a590639d944abd150599e54d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5301910845085200358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161114849769806729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.75, y: 1, z: 1.5}
+  m_Center: {x: 1.8, y: 0, z: -0.1}
 --- !u!1 &1161114850423469025
 GameObject:
   m_ObjectHideFlags: 0

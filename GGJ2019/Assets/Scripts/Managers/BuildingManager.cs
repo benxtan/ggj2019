@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
-    public GameObject[] buildings;
+    public static GameObject[] buildings;
 
     // Start is called before the first frame update
     void Start()
@@ -16,19 +16,20 @@ public class BuildingManager : MonoBehaviour
     {
         buildings = GameObject.FindGameObjectsWithTag("Buildings");
         Debug.Log("Num Buildings: " + buildings.Length);
-
-        // Assign feelings
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    public static Building CreateHomeFor(GameObject person)
+    public static GameObject CreateHomeFor(GameObject person)
     {
-        return null;
+        Feeling feeling = person.GetComponent<Person>().feeling;
+
+        GameObject building = buildings[Random.Range(0, buildings.Length)];
+        building.GetComponent<Building>().feeling = feeling;
+
+        return building;
     }
 }

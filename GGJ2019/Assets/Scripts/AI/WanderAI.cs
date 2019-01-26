@@ -9,12 +9,12 @@ public class WanderAI : MonoBehaviour
     public float wanderTimer;
 
     private Transform target;
-    private UnityEngine.AI.NavMeshAgent agent;
+    private NavMeshAgent agent;
     private float timer;
 
 
     private void OnEnable() {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
     }
 

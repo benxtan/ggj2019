@@ -9,7 +9,8 @@ public class Person : MonoBehaviour
     private string _feelingString;   // This is visible in the Inspector
     public string feelingString
     {
-        get {
+        get
+        {
             return feeling.ToString();
         }
     }
@@ -28,5 +29,17 @@ public class Person : MonoBehaviour
     {
         feeling = FeelingManager.GetRandomFeeling();
         _feelingString = feeling.ToString();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("OnTriggerEnter");
+        Debug.Log(other);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("OnCollisionEnter");
+        Debug.Log(collision);
     }
 }

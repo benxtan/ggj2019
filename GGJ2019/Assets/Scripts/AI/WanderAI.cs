@@ -28,6 +28,7 @@ public class WanderAI : MonoBehaviour
         {
             Vector3 newPos = RandomNavMeshLocation(wanderRadius);
             agent.SetDestination(newPos);
+            target.position = RandomNavMeshLocation(wanderRadius);
             timer = 0;
         }
     }
@@ -37,6 +38,8 @@ public class WanderAI : MonoBehaviour
         // Display the explosion radius when selected
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, this.wanderRadius);
+
+        Gizmos.DrawIcon(this.target.transform.position, "Light Gizmo.tiff", true);
     }
 
     public Vector3 RandomNavMeshLocation(float radius)

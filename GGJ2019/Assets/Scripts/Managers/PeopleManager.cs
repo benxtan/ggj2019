@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PeopleManager : MonoBehaviour
 {
-    public GameObject person;
+    public GameObject personPrefab;
+    public static GameObject person;
+    public static GameObject people;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        person = personPrefab;
+        people = GameObject.Find("People");
     }
 
     // Update is called once per frame
@@ -18,8 +21,12 @@ public class PeopleManager : MonoBehaviour
         
     }
 
-    public static void CreatePerson()
+    public static Person CreatePerson()
     {
+        GameObject newPerson = Instantiate(person);
+        newPerson.transform.parent = people.transform;
+        newPerson.transform.position = Vector3.zero;
 
+        return null;
     }
 }

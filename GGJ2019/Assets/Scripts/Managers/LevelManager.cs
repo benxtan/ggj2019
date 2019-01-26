@@ -15,7 +15,8 @@ public class LevelManager : MonoBehaviour
     void InitLevel(int level)
     {
         currentLevel = 1;
-        PeopleManager.CreatePerson();
+        Person person = PeopleManager.CreatePerson();
+        BuildingManager.CreateHomeFor(person);
     }
 
     // Update is called once per frame

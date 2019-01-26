@@ -13,7 +13,8 @@ public class WanderAI : MonoBehaviour
     private float timer;
 
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
     }
@@ -23,25 +24,35 @@ public class WanderAI : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > wanderTimer) {
+        if (timer > wanderTimer)
+        {
             Vector3 newPos = RandomNavMeshLocation(wanderRadius);
             agent.SetDestination(newPos);
             timer = 0;
         }
     }
-    
- public Vector3 RandomNavMeshLocation(float radius) {
-         Vector3 randomDirection = Random.insideUnitSphere * radius;
-         randomDirection += transform.position;
 
-         NavMeshHit hit;
+   void OnDrawGizmosSelected()
+    {
+        // Display the explosion radius when selected
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, this.wanderRadius);
+    }
 
-         Vector3 finalPosition = Vector3.zero;
+    public Vector3 RandomNavMeshLocation(float radius)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
 
-         if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
-             finalPosition = hit.position;            
-         }
+        NavMeshHit hit;
 
-         return finalPosition;
-     }
+        Vector3 finalPosition = Vector3.zero;
+
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+        {
+            finalPosition = hit.position;
+        }
+
+        return finalPosition;
+    }
 }

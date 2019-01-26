@@ -8,7 +8,7 @@ public class WanderAI : MonoBehaviour
     public float wanderRadius;
     public float wanderTimer;
 
-    private Transform target;
+    private Vector3 target;
     private NavMeshAgent agent;
     private float timer;
 
@@ -16,6 +16,10 @@ public class WanderAI : MonoBehaviour
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.autoBraking = true;
+        agent.autoRepath = true;
+        NavMesh.avoidancePredictionTime = 0.5f;
+
         timer = wanderTimer;
     }
 
@@ -26,12 +30,11 @@ public class WanderAI : MonoBehaviour
 
         if (timer > wanderTimer)
         {
-            Vector3 newPos = RandomNavMeshLocation(wanderRadius);
+            Vector3 newPos = RandomNavMeshLocation(wanderRadius, agent);
             agent.SetDestination(newPos);
-            // target.transform.position = new Vector3(newPos.x, newPos.y, newPos.z);
-
+            target = newPos;
             timer = 0;
-        }
+        }	   
     }
 
    void OnDrawGizmosSelected()
@@ -41,21 +44,26 @@ public class WanderAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, this.wanderRadius);
 
         // Displays the navmesh target when selected
-        // Gizmos.DrawSphere(this.target.transform.position, 1);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(this.target, 0.2f);
     }
 
-    public Vector3 RandomNavMeshLocation(float radius)
+    public Vector3 RandomNavMeshLocation(float radius, NavMeshAgent agent)
     {
         Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
 
         NavMeshHit hit;
-
         Vector3 finalPosition = Vector3.zero;
+        Vector3 bufferPosition = Vector3.zero;
 
         if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
         {
             finalPosition = hit.position;
+            bufferPosition = new Vector3(finalPosition.x * (agent.radius / 2), finalPosition.y * (agent.radius / 2), finalPosition.z * (agent.radius / 2));
+
+            Debug.Log(finalPosition);
+            Debug.Log(bufferPosition);
         }
 
         return finalPosition;

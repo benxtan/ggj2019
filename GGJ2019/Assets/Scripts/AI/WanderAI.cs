@@ -28,18 +28,20 @@ public class WanderAI : MonoBehaviour
         {
             Vector3 newPos = RandomNavMeshLocation(wanderRadius);
             agent.SetDestination(newPos);
-            target.position = RandomNavMeshLocation(wanderRadius);
+            // target.transform.position = new Vector3(newPos.x, newPos.y, newPos.z);
+
             timer = 0;
         }
     }
 
    void OnDrawGizmosSelected()
     {
-        // Display the explosion radius when selected
+        // Display the wander radius when selected
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, this.wanderRadius);
 
-        Gizmos.DrawIcon(this.target.transform.position, "Light Gizmo.tiff", true);
+        // Displays the navmesh target when selected
+        // Gizmos.DrawSphere(this.target.transform.position, 1);
     }
 
     public Vector3 RandomNavMeshLocation(float radius)

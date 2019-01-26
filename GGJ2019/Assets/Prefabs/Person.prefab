@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af774c56b49524dd19b2caadb35f63c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 5
+  wanderRadius: 10
   wanderTimer: 20
 --- !u!114 &5765352972480461293
 MonoBehaviour:

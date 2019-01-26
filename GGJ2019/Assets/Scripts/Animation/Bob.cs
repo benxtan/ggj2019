@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bob : MonoBehaviour {
-
+public class Bob : MonoBehaviour
+{
 	public float Speed = 1.0f;
 	public float Distance = 1.0f;
     public float Offset = 0.0f;

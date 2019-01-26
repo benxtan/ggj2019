@@ -26,7 +26,6 @@ public class BuildingManager : MonoBehaviour
     public static GameObject CreateHomeFor(GameObject person)
     {
         Feeling feeling = person.GetComponent<Person>().feeling;
-        Debug.Log("TesT" + feeling.ToString());
 
         GameObject building = buildings[Random.Range(0, buildings.Length)];
         building = buildings[4];   // DEBUG

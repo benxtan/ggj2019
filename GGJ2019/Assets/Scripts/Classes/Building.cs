@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    // Off - Front
+    // Off - Left
+    // Off - Top
+    // On  - Front
+    // On  - Left
+    // On  - Top
+    public Material[] materials;
+
     private Feeling _feeling;
     public Feeling feeling
     {
@@ -28,6 +36,14 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    public void SetOn(bool isOn)
+    {
+        transform.Find("Bubble").gameObject.SetActive(false);
+
+        transform.Find("Left").GetComponent<Renderer>().material = materials[3];
+        transform.Find("Top").GetComponent<Renderer>().material = materials[5];
+        transform.Find("Front").GetComponent<Renderer>().material = materials[4];
     }
 }

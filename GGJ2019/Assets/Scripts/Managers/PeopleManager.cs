@@ -27,22 +27,14 @@ public class PeopleManager : MonoBehaviour
         newPerson.transform.position = GetRandomPosition();
         newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
 
+        newPerson.GetComponent<NavMeshAgent>().Warp(newPerson.transform.position);
+
         return newPerson;
     }
 
     public static Vector3 GetRandomPosition()
     {
-        float radius = 10;
-        Vector3 randomDirection = Random.insideUnitSphere * radius;
-        randomDirection += new Vector3(25, 0, -35);   // Centre of 25x25 grid town
-
-        NavMeshHit hit;
-        Vector3 randomPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
-        {
-            randomPosition = hit.position;
-        }
-
-        return randomPosition;
+        GameObject[] roads = GameObject.FindGameObjectsWithTag("Road");
+        return roads[Random.Range(0, roads.Length)].transform.position;
     }
 }

@@ -6,7 +6,7 @@ TextureImporter:
     21300002: Bubble - Building
     21300004: Icon - Beer
     21300006: Bubble - Person
-    21300008: Love
+    21300008: Icon - Love
     21300010: thoughts_512_5
     21300012: thoughts_512_6
     21300014: thoughts_512_7
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beer
+      name: Icon - Beer
       rect:
         serializedVersion: 2
         x: 0
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish
+      name: Icon - Fish
       rect:
         serializedVersion: 2
         x: 128
@@ -200,7 +200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Love
+      name: Icon - Love
       rect:
         serializedVersion: 2
         x: 256

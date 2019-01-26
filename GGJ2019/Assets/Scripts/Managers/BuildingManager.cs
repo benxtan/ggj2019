@@ -13,7 +13,7 @@ public class BuildingManager : MonoBehaviour
 
     void InitBuildings()
     {
-        buildings = GameObject.FindGameObjectsWithTag("Buildings");
+        BuildingManager.buildings = GameObject.FindGameObjectsWithTag("Buildings");
         Debug.Log("Num Buildings: " + buildings.Length);
     }
 
@@ -24,7 +24,7 @@ public class BuildingManager : MonoBehaviour
 
     public static GameObject CreateHomeFor(GameObject person)
     {
-        GameObject[] emptyBuildings = GetEmptyBuildings();
+        GameObject[] emptyBuildings = BuildingManager.GetEmptyBuildings();
         //Debug.Log(emptyBuildings.Length);
 
         if (emptyBuildings.Length == 0)
@@ -35,7 +35,9 @@ public class BuildingManager : MonoBehaviour
 
         Feeling feeling = person.GetComponent<Person>().feeling;
 
-        GameObject building = buildings[Random.Range(0, emptyBuildings.Length)];
+        GameObject building = emptyBuildings[Random.Range(0, emptyBuildings.Length)];
+
+        if (!building.GetComponent<Building>().IsEmpty()) Debug.LogError("BUILDING ALREADY ASSIGNED!!!");
 
         //Debug.Log(building.name + " " + building.GetComponent<Building>().IsEmpty());
         building.GetComponent<Building>().feeling = feeling;
@@ -46,21 +48,16 @@ public class BuildingManager : MonoBehaviour
 
     public static GameObject[] GetEmptyBuildings()
     {
-        GameObject[] buildings = GameObject.FindGameObjectsWithTag("Buildings");
-        string test = "";
+        //GameObject[] buildings = GameObject.FindGameObjectsWithTag("Buildings");
 
         List<GameObject> emptyBuildings = new List<GameObject>();
-        for (int i = 0; i < buildings.Length; i++)
+        for (int i = 0; i < BuildingManager.buildings.Length; i++)
         {
-            if (buildings[i].GetComponent<Building>().IsEmpty())
+            if (BuildingManager.buildings[i].GetComponent<Building>().IsEmpty())
             {
-                emptyBuildings.Add(buildings[i]);
+                emptyBuildings.Add(BuildingManager.buildings[i]);
             }
-
-            test += buildings[i].GetComponent<Building>().IsEmpty() ? "_" : "X"; 
         }
-
-        Debug.Log(test);
 
         return emptyBuildings.ToArray();
     }

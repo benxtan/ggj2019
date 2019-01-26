@@ -25,10 +25,19 @@ public class Building : MonoBehaviour
         {
             _feeling = value;
 
+            // Set bubble icon
+            int iconIndex = 0;
+            if (feeling.feelingType == FeelingManager.FeelingType.Beer) iconIndex = 0;
+            else if (feeling.feelingType == FeelingManager.FeelingType.Fish) iconIndex = 1;
+            else if (feeling.feelingType == FeelingManager.FeelingType.Love) iconIndex = 2;
+            gameObject.transform.Find("Bubble/Icon").GetComponent<SpriteRenderer>().sprite = icons[iconIndex];
+
             // Turn on bubble
             transform.Find("Bubble").gameObject.SetActive(true);
         }
     }
+
+    public Sprite[] icons;
 
     // Start is called before the first frame update
     void Start()

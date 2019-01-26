@@ -51,7 +51,18 @@ public class TownManager : MonoBehaviour
            "GRRRRRRRRRRRGGGGGGGGGGGGG" +
            "GGGGGGGGGGGGGGGGGGGGGGGGG";
 
-        CreateTown(map);
+        //CreateTown(map);
+
+        townWidth = 10;
+        townHeight = 5;
+        string map2 =
+            "RRRRRRRRRR" +
+            "RHRHGGHRHR" +
+            "RHRHGGHRHR" +
+            "RHRHGGHRHR" +
+            "RRRRRRRRRR";
+
+        CreateTown(map2);
     }
 
     // Update is called once per frame
@@ -141,45 +152,46 @@ public class TownManager : MonoBehaviour
         // --------------------------------------------------------------------
 
         // Top left
-        if (x == 0 || y == 0) grid = "0";
+        if (x == 0 || y == 0) grid += "0";
         else grid += IsRoad(map, x - 1, y - 1) ? "1" : "0";
 
         // Top middle
-        if (y == 0) grid = "0";
+        if (y == 0) grid += "0";
         else grid += IsRoad(map, x, y - 1) ? "1" : "0";
 
         // Top right
-        if (x == townWidth - 1 || y == 0) grid = "0";
+        if (x == townWidth - 1 || y == 0) grid += "0";
         else grid += IsRoad(map, x + 1, y - 1) ? "1" : "0";
 
         // --------------------------------------------------------------------
 
         // Left
-        if (x == 0) grid = "0";
+        if (x == 0) grid += "0";
         else grid += IsRoad(map, x - 1, y) ? "1" : "0";
 
         grid += "1";
 
         // Right
-        if (x == townWidth - 1) grid = "0";
+        if (x == townWidth - 1) grid += "0";
         else grid += IsRoad(map, x + 1, y) ? "1" : "0";
 
         // --------------------------------------------------------------------
 
         // Bottom left
-        if (x == 0 || y == townHeight - 1) grid = "0";
+        if (x == 0 || y == townHeight - 1) grid += "0";
         else grid += IsRoad(map, x - 1, y + 1) ? "1" : "0";
 
         // Bottom middle
-        if (y == townHeight - 1) grid = "0";
+        if (y == townHeight - 1) grid += "0";
         else grid += IsRoad(map, x, y + 1) ? "1" : "0";
 
         // Bottom right
-        if (x == townWidth - 1 || y == townHeight - 1) grid = "0";
+        if (x == townWidth - 1 || y == townHeight - 1) grid += "0";
         else grid += IsRoad(map, x + 1, y + 1) ? "1" : "0";
 
         // --------------------------------------------------------------------
 
+        Debug.Log(grid);
 
         // Just return NESW values - e.g. 0000
         // 0 1 2

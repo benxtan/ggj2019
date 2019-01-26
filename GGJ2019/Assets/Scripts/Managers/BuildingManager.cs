@@ -26,4 +26,9 @@ public class BuildingManager : MonoBehaviour
     {
         
     }
+
+    public static Building CreateHomeFor(Person person)
+    {
+        return null;
+    }
 }

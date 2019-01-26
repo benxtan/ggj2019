@@ -27,9 +27,9 @@ public class TownManager : MonoBehaviour
            "GRHRGHRHHRHHRHHRGRRGHGHGG" +
            "GRGRHGRGGRGGRGGRHGRRRRRRG" +
            
-           "GRHRGHRHHRHHRHHRGGHRHGHRH" +
+           "GRHRGHRHHRHHRHHRGGHRHGHRG" +
            "GRGRHGRGGRGGRGGRHGGRGGGRG" +
-           "GRHRGHRHHRHHRHHRGGHRHGHRH" +
+           "GRHRGHRHHRHHRHHRGGHRHGHRG" +
            "GRGRHGRGGRGGRGGRHGGRGGGRG" +
            "GRHRGHRHHRHHRHHRGGHRHGHRG" +
 
@@ -37,7 +37,7 @@ public class TownManager : MonoBehaviour
            "GRHRGGRHHRHHRHHRGGHRHGHRG" +
            "GRGRRRRRRRRRRRRRRRRRRRRRG" +
            "GRHRGGGGGRGGGGGRGGGGGGGRG" +
-           "GRGRRRRRRRRRRRRRRRRRRRRRH" +
+           "GRGRRRRRRRRRRRRRRRRRRRRRG" +
            
            "GRHRGHGRGHGRGGGRGGGRGGGRG" +
            "GRGRHGHRHGHRHGHRGGGRGHRRG" +
@@ -89,37 +89,30 @@ public class TownManager : MonoBehaviour
                     string grid = GetRoadGrid(map, x, y);
 
                     // T right
-                    if (grid == "010011010") CreateTile(roadTiles[0], x, y);
+                    if (grid == "1110") CreateTile(roadTiles[0], x, y);
                     // T left
-                    else if (grid == "010110010") CreateTile(roadTiles[1], x, y);
+                    else if (grid == "1011") CreateTile(roadTiles[1], x, y);
                     // T down
-                    else if (grid == "000111010") CreateTile(roadTiles[2], x, y);
+                    else if (grid == "0111") CreateTile(roadTiles[2], x, y);
                     // T up
-                    else if (grid == "010111000") CreateTile(roadTiles[3], x, y);
+                    else if (grid == "1101") CreateTile(roadTiles[3], x, y);
 
                     // Cross
-                    else if (grid == "000010000" || grid == "010111010") CreateTile(roadTiles[Random.Range(4, 5)], x, y);   // 2 crosses
+                    else if (grid == "1111") CreateTile(roadTiles[Random.Range(4, 5)], x, y);   // 2 crosses
 
                     // Straight Up
-                    else if ((grid.Substring(3, 1) == "0" && grid.Substring(5, 1) == "0") /*||
-                             grid == "010010010" ||
-                             grid == "010010000" ||
-                             grid == "000010010" ||
-                             grid == "011010010" ||
-                             grid == "110010010" ||
-                             grid == "011010010" ||
-                             grid == "011010000"*/) CreateTile(roadTiles[6], x, y);
+                    else if (grid == "1010") CreateTile(roadTiles[6], x, y);
                     // Straight Across
-                    else if (grid == "000111000" || grid == "000111100" || grid == "000111001" || grid == "000111101") CreateTile(roadTiles[7], x, y);
+                    else if (grid == "0101") CreateTile(roadTiles[7], x, y);
 
                     // Corner Down Right
-                    else if (grid == "000011010") CreateTile(roadTiles[8], x, y);
+                    else if (grid == "0110") CreateTile(roadTiles[8], x, y);
                     // Corner Down Left
-                    else if (grid == "000110010") CreateTile(roadTiles[9], x, y);
+                    else if (grid == "0011") CreateTile(roadTiles[9], x, y);
                     // Corner Up Right
-                    else if (grid == "010011000") CreateTile(roadTiles[10], x, y);
+                    else if (grid == "1100") CreateTile(roadTiles[10], x, y);
                     // Corner Up Left
-                    else if (grid == "010110000") CreateTile(roadTiles[10], x, y);
+                    else if (grid == "1001") CreateTile(roadTiles[11], x, y);
 
                 }
                 else if (mapCharacter == "H")
@@ -140,6 +133,7 @@ public class TownManager : MonoBehaviour
         return map.Substring(x + (y * townWidth), 1);
     }
 
+    // Returns a string of the NSEW values, e.g. 0000, 0100, etc.
     private string GetRoadGrid(string map, int x, int y)
     {
         string grid = "";
@@ -186,13 +180,21 @@ public class TownManager : MonoBehaviour
 
         // --------------------------------------------------------------------
 
+
+        // Just return NESW values - e.g. 0000
+        // 0 1 2
+        // 3 4 5
+        // 6 7 8
+        grid = grid.Substring(1, 1) + grid.Substring(5, 1) + grid.Substring(7, 1) + grid.Substring(3, 1);
+
         return grid;
     }
 
     // Check if there is a road at (x, y)
     private bool IsRoad(string map, int x, int y)
     {
-        return map.Substring(x + (y * townWidth), 1) == "R";
+        string charAt = GetMapCharacterAt(map, x, y);
+        return charAt == "R" || charAt == "H";
     }
 
     private void CreateTile(GameObject go, int x, int y)

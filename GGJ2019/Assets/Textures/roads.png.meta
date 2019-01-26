@@ -2,18 +2,18 @@ fileFormatVersion: 2
 guid: e85321b95747940e1842e40acc9c2ed0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: roads_0
-    21300002: roads_1
-    21300004: roads_2
-    21300006: roads_3
-    21300008: roads_4
-    21300010: roads_5
-    21300012: roads_6
-    21300014: roads_7
-    21300016: roads_8
-    21300018: roads_9
-    21300020: roads_10
-    21300022: roads_11
+    21300000: road_t_right
+    21300002: road_t_left
+    21300004: road_t_down
+    21300006: road_t_up
+    21300008: road_cross_a
+    21300010: road_cross_b
+    21300012: road_straight_up
+    21300014: road_straight_across
+    21300016: road_corner_right
+    21300018: road_corner_left
+    21300020: road_corner_up_right
+    21300022: road_corner_up_left
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -96,7 +96,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roads_0
+      name: road_t_right
       rect:
         serializedVersion: 2
         x: 0
@@ -116,7 +116,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_1
+      name: road_t_left
       rect:
         serializedVersion: 2
         x: 512
@@ -136,7 +136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_2
+      name: road_t_down
       rect:
         serializedVersion: 2
         x: 1024
@@ -156,7 +156,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_3
+      name: road_t_up
       rect:
         serializedVersion: 2
         x: 1536
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_4
+      name: road_cross_a
       rect:
         serializedVersion: 2
         x: 0
@@ -196,7 +196,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_5
+      name: road_cross_b
       rect:
         serializedVersion: 2
         x: 512
@@ -216,7 +216,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_6
+      name: road_straight_up
       rect:
         serializedVersion: 2
         x: 1024
@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_7
+      name: road_straight_across
       rect:
         serializedVersion: 2
         x: 1536
@@ -256,7 +256,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_8
+      name: road_corner_right
       rect:
         serializedVersion: 2
         x: 0
@@ -276,7 +276,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_9
+      name: road_corner_left
       rect:
         serializedVersion: 2
         x: 512
@@ -296,7 +296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_10
+      name: road_corner_up_right
       rect:
         serializedVersion: 2
         x: 1024
@@ -316,7 +316,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roads_11
+      name: road_corner_up_left
       rect:
         serializedVersion: 2
         x: 1536

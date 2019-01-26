@@ -1,21 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Person : MonoBehaviour
 {
     public float health;
-    public string feeling;
+    public Feeling feeling;
+
+    public string feelingString
+    {
+        get
+        {
+            return feeling.ToString();
+        }
+        set
+        {
+
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

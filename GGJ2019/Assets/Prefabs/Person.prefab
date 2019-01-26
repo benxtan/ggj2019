@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 8814104368995663827}
   - component: {fileID: 8814104368995663836}
   - component: {fileID: 8814104368995663837}
+  - component: {fileID: 5765352972480461293}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -253,3 +254,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderRadius: 5
   wanderTimer: 20
+--- !u!114 &5765352972480461293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814104368995663826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040a3d842c6524408bc35dc31ab90bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  feeling: 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Buildings
   - Obstacle
+  - People
   layers:
   - Default
   - TransparentFX

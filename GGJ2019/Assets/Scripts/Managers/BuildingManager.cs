@@ -27,7 +27,7 @@ public class BuildingManager : MonoBehaviour
         
     }
 
-    public static Building CreateHomeFor(Person person)
+    public static Building CreateHomeFor(GameObject person)
     {
         return null;
     }

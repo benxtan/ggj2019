@@ -21,12 +21,14 @@ public class PeopleManager : MonoBehaviour
         
     }
 
-    public static Person CreatePerson()
+    public static GameObject CreatePerson()
     {
         GameObject newPerson = Instantiate(person);
         newPerson.transform.parent = people.transform;
         newPerson.transform.position = Vector3.zero;
+        newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
+        //Debug.Log(newPerson.GetComponent<Person>().feelingString);
 
-        return null;
+        return newPerson;
     }
 }

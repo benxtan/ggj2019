@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     void InitLevel(int level)
     {
         currentLevel = 1;
-        Person person = PeopleManager.CreatePerson();
+        GameObject person = PeopleManager.CreatePerson();
         BuildingManager.CreateHomeFor(person);
     }
 

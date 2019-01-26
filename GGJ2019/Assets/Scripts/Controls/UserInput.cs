@@ -3,9 +3,7 @@ using System.Collections;
 using RTS;
  
 public class UserInput : MonoBehaviour {
- 
- 
-    // Use this for initialization
+     // Use this for initialization
     void Start () {
     }
  
@@ -61,11 +59,11 @@ public class UserInput : MonoBehaviour {
         //movement.y -= ResourceManager.ScrollSpeed * Input.GetAxis("Mouse ScrollWheel");
         if (Input.GetAxis("Mouse ScrollWheel") < 0) // back
         {
-            Camera.main.orthographicSize = Mathf.Min(Camera.main.orthographicSize + 0.5f, 6);
+            Camera.main.orthographicSize = Mathf.Min(Camera.main.orthographicSize + 0.5f, 6f);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0) // forward
         {
-            Camera.main.orthographicSize = Mathf.Max(Camera.main.orthographicSize - 0.5f, 1);
+            Camera.main.orthographicSize = Mathf.Max(Camera.main.orthographicSize - 0.5f, 1f);
         }
 
         //calculate desired camera position based on received input

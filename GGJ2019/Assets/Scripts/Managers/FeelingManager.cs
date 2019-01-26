@@ -4,10 +4,9 @@ public class FeelingManager : MonoBehaviour
 {
     public enum FeelingType
     {
+        Beer,
         Fish,
         Dog,
-        Beer,
-
     }
 
     // Start is called before the first frame update

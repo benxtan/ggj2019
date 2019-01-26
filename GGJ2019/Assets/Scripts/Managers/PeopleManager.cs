@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static FeelingManager;
 
 public class PeopleManager : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class PeopleManager : MonoBehaviour
         newPerson.transform.parent = people.transform;
         newPerson.transform.position = Vector3.zero;
         newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
+
+        Debug.Log("222 TEST123:" + newPerson.GetComponent<Person>());   
+        Debug.Log("222 TEST123:" + newPerson.GetComponent<Person>().feeling);
+        Debug.Log("222 TEST123:" + newPerson.GetComponent<Person>().feelingString);
 
         return newPerson;
     }

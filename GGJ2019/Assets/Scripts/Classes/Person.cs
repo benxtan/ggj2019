@@ -1,21 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Person : MonoBehaviour
 {
     public float health;
-    public string feeling;
+    public Feeling feeling;
+
+    [SerializeField]
+    private string _feelingString;   // This is visible in the Inspector
+    public string feelingString
+    {
+        get {
+            return feeling.ToString();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    public void InitPerson(Feeling feeling)
+    {
+        feeling = FeelingManager.GetRandomFeeling();
+        _feelingString = feeling.ToString();
     }
 }

@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using static FeelingManager;
 
-public class Feeling : MonoBehaviour
+public class Feeling
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public FeelingType feelingType;
 
-    // Update is called once per frame
-    void Update()
+    public override string ToString()
     {
-        
+        return System.Enum.GetName(typeof(FeelingType), feelingType);
     }
 }

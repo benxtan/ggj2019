@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    private Feeling _feeling;
     public Feeling feeling
     {
+        get
+        {
+            return _feeling;
+        }
         set
         {
+            _feeling = value;
+
             // Turn on bubble
             transform.Find("Bubble").gameObject.SetActive(true);
         }

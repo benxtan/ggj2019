@@ -7,15 +7,19 @@ TextureImporter:
     21300004: Icon - Beer
     21300006: Bubble - Person
     21300008: Icon - Love
-    21300010: thoughts_512_5
-    21300012: thoughts_512_6
-    21300014: thoughts_512_7
+    21300010: Icon - Beer
+    21300012: Icon - Fish
+    21300014: Icon - Love
     21300016: Icon - Beer
     21300018: Icon - Fish
     21300020: Bubble - Person
     21300022: Bubble - Building
     21300024: Beer
     21300026: Fish
+    21300028: Icon - Gym
+    21300030: Icon - Sleep
+    21300032: Icon - Bath
+    21300034: Icon - Game
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -128,13 +132,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fea9b8feef0f304087fa77a3356d425
+      spriteID: 4c3aa1b753efd4f24b6e449d3edc0f20
       vertices: []
       indices: 
       edges: []
@@ -148,13 +152,73 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2182569d4e4988c4ebb404eab1002849
+      spriteID: be6064a51cb70482d95b63173b3a7d1c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon - Gym
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532d7e2c7b8344ca08bea1c87edb95ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon - Sleep
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ffcbe6fa87d4e49a8e565029b4e4e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon - Bath
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf7cf1a6c581497a9ac5533619b401a
       vertices: []
       indices: 
       edges: []
@@ -168,13 +232,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31084361fd6fe35418b2e4d5191d4077
+      spriteID: 958b521bf9beb409aa2ab22d28fce86f
       vertices: []
       indices: 
       edges: []
@@ -188,13 +252,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b916bef74f8ae43b879465a32695d8
+      spriteID: f4c9073ee3fc54ec2a7c1964f45aecac
       vertices: []
       indices: 
       edges: []
@@ -208,13 +272,33 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71c25d978868f84458b85cd4e3a83b14
+      spriteID: 2e9097f9199284609be778fc77be6f8d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon - Game
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4276a5b7b5664459abed05885a3f4277
       vertices: []
       indices: 
       edges: []

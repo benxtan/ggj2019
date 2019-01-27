@@ -183,6 +183,7 @@ public class UIManager : MonoBehaviour
 
     private void LevelWinButtonOnClick()
     {
+        levelWinPanel.SetActive(false);
         TimesUpButtonOnClick();
     }
 }

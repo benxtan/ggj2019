@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderRadius: 50
-  wanderTimer: 20
+  wanderTimer: 10
 --- !u!114 &5765352972480461293
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviour
     {
         splashPanel.SetActive(false);
         startPanel.SetActive(true);
-        startLevelText.text = "LEVEL 1";
+        startLevelText.text = "LEVEL " + LevelManager.currentLevel.ToString();
     }
 
     private void StartButtonOnClick()

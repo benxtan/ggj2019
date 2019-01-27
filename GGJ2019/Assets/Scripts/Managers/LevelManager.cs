@@ -25,7 +25,9 @@ public class LevelManager : MonoBehaviour
 
         map02 = GameObject.Find("Map02");
         map02.SetActive(false);
-        
+
+        if (Main.IS_DEBUG) currentLevel = Main.DEBUG_TEST_LEVEL - 1;
+
         LevelManager.InitNextLevel();
     }
 
@@ -73,7 +75,7 @@ public class LevelManager : MonoBehaviour
         }
 
         // DEBUG
-        //levelMaxTimeInSeconds = 5;
+        //if (Main.IS_DEBUG) levelMaxTimeInSeconds = 5;
 
         // Initialise buildings for this level
         BuildingManager.InitLevelBuildings();
@@ -88,11 +90,13 @@ public class LevelManager : MonoBehaviour
         {
             cameraTargetPosition = new Vector3(9, 0, -4);
             orthographicSize = 6;
+            GameObject.Find("_CloudManager").transform.position = Vector3.zero;
         }
         else
         {
             cameraTargetPosition = new Vector3(54, 0, -24);
             orthographicSize = 10;
+            GameObject.Find("_CloudManager").transform.position = new Vector3(52, 0, -25);
         }
 
         // Map prefabs

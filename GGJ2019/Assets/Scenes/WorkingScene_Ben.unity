@@ -148,6 +148,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &236600200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126782830722809467, guid: fd612663b581ecb44816e89895e12e40,
+    type: 3}
+  m_PrefabInstance: {fileID: 6300933517407090935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &489091133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5130843317402865483, guid: a5ef8a1e7bc5c4a5b9a6c56000500b48,
@@ -1229,6 +1235,11 @@ PrefabInstance:
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 506412282}
+    - target: {fileID: 6300933517199402878, guid: fd612663b581ecb44816e89895e12e40,
+        type: 3}
+      propertyPath: timesUpPanel
+      value: 
+      objectReference: {fileID: 236600200}
     - target: {fileID: 709080838401443062, guid: fd612663b581ecb44816e89895e12e40,
         type: 3}
       propertyPath: m_SizeDelta.y

@@ -2,6 +2,8 @@
 
 public class Main : MonoBehaviour
 {
+    public static bool IS_DEBUG = false;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -52,12 +52,16 @@ public class Person : MonoBehaviour
 
             if (building.feeling != null && !building.isPersonHome)
             {
+                // Check if the person has reached their designated home
                 if (building.feeling.feelingType == feeling.feelingType)
                 {
                     Debug.Log("HOME!!!");
 
                     // Audio
                     other.gameObject.transform.Find("Audio/Home").GetComponent<AudioSource>().Play();
+
+                    // Grass
+                    TownManager.CreateLitGrassTile(other.gameObject.transform.localPosition);
 
                     // Building
                     building.SetPersonHome();

@@ -7,7 +7,7 @@ public class CloudManager : MonoBehaviour
     private int maxClouds = 100;
     private int numClouds = 0;
     private float lastSpawnTime = -1;
-    public int spawnInterval = 2;
+    public int spawnInterval = 4;
 
     // Start is called before the first frame update
     void Start()

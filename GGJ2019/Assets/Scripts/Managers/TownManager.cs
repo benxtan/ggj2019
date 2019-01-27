@@ -7,18 +7,22 @@ public class TownManager : MonoBehaviour
     public int level = 1;
 
     public GameObject grassTile;
+    public GameObject _litGrassTile;
+    public static GameObject litGrassTile;
+
     public GameObject[] roadTiles;
     public GameObject[] houseTiles;
 
     private int townWidth = 25;
     private int townHeight = 25;
 
-    private GameObject parent;
+    private static GameObject mapParent;
 
     // Start is called before the first frame update
     void Start()
     {
-        parent = GameObject.Find("Map00");
+        litGrassTile = _litGrassTile;
+        mapParent = GameObject.Find("Map00");
 
         string map;
 
@@ -95,7 +99,7 @@ public class TownManager : MonoBehaviour
             for (int x = 0; x < townWidth; x++)
             {
                 GameObject newGrass = Instantiate(grassTile);
-                newGrass.transform.parent = parent.transform;
+                newGrass.transform.parent = mapParent.transform;
                 newGrass.transform.position = new Vector3(x * 2, 0, z * 2);
             }
         }
@@ -225,10 +229,19 @@ public class TownManager : MonoBehaviour
         return charAt == "R" || charAt == "H";
     }
 
-    private void CreateTile(GameObject go, int x, int y)
+    private static void CreateTile(GameObject go, int x, int y)
     {
         GameObject tile = Instantiate(go);
-        tile.transform.parent = parent.transform;
+        tile.transform.parent = mapParent.transform;
         tile.transform.position = new Vector3(x * 2, 0, -y * 2);
+    }
+
+    public static void CreateLitGrassTile(Vector3 position)
+    {
+        GameObject tile = Instantiate(litGrassTile);
+        //tile.transform.parent = mapParent.transform;
+        tile.transform.position = position + new Vector3(0, 0.01f, 0);
+
+        //new Vector3(x * 2, 0, -y * 2);
     }
 }

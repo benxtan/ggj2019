@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 using static FeelingManager;
 
@@ -6,7 +7,7 @@ public class PeopleManager : MonoBehaviour
 {
     public GameObject personPrefab;
     public static GameObject person;
-    public static GameObject people;
+    public static GameObject people;   // Parent
 
     // Start is called before the first frame update
     void Start()
@@ -15,16 +16,11 @@ public class PeopleManager : MonoBehaviour
         people = GameObject.Find("People");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public static GameObject CreatePerson()
     {
         GameObject newPerson = Instantiate(person);
         newPerson.transform.parent = people.transform;
-        newPerson.transform.position = GetRandomPosition();
+        newPerson.transform.position = GetRandomPersonPosition();
         newPerson.GetComponent<Person>().InitPerson(FeelingManager.GetRandomFeeling());
 
         newPerson.GetComponent<NavMeshAgent>().Warp(newPerson.transform.position);
@@ -32,9 +28,10 @@ public class PeopleManager : MonoBehaviour
         return newPerson;
     }
 
-    public static Vector3 GetRandomPosition()
+    public static Vector3 GetRandomPersonPosition()
     {
-        GameObject[] roads = GameObject.FindGameObjectsWithTag("Road");
+        // Get all objects with the tag "Road" and check if it is a child of the current Map
+        GameObject[] roads = new List<GameObject>(GameObject.FindGameObjectsWithTag("Road")).FindAll(g => g.transform.IsChildOf(LevelManager.GetCurrentMap().transform)).ToArray();
         return roads[Random.Range(0, roads.Length)].transform.position;
     }
 }

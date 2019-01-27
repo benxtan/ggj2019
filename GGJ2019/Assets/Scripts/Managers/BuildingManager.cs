@@ -5,21 +5,10 @@ public class BuildingManager : MonoBehaviour
 {
     public static GameObject[] buildings;
 
-    // Start is called before the first frame update
-    void Start()
+    public static void InitLevelBuildings()
     {
-        InitBuildings();
-    }
-
-    void InitBuildings()
-    {
-        BuildingManager.buildings = GameObject.FindGameObjectsWithTag("Buildings");
+        BuildingManager.buildings = new List<GameObject>(GameObject.FindGameObjectsWithTag("Buildings")).FindAll(g => g.transform.IsChildOf(LevelManager.GetCurrentMap().transform)).ToArray();
         Debug.Log("Num Buildings: " + buildings.Length);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public static GameObject CreateHomeFor(GameObject person)

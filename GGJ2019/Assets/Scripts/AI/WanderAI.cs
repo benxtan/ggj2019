@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class WanderAI : MonoBehaviour
@@ -12,21 +10,19 @@ public class WanderAI : MonoBehaviour
     private NavMeshAgent agent;
     private float timer;
 
-
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
 
         if (timer > wanderTimer)
         {
-            Vector3 newPos = RandomNavMeshLocation(wanderRadius);
+            Vector3 newPos = PeopleManager.GetRandomPersonPosition();
             agent.SetDestination(newPos);
             target = newPos;
             timer = 0;
@@ -41,12 +37,6 @@ public class WanderAI : MonoBehaviour
 
         // Displays the navmesh target when selected
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(this.target, 2.0f);
-    }
-
-    public Vector3 RandomNavMeshLocation(float radius)
-    {
-        GameObject[] roads = GameObject.FindGameObjectsWithTag("Road");
-        return roads[Random.Range(0, roads.Length)].transform.position;
+        Gizmos.DrawSphere(this.target, 1.0f);
     }
 }

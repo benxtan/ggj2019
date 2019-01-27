@@ -35,6 +35,7 @@ public class BuildingManager : MonoBehaviour
         Feeling feeling = person.GetComponent<Person>().feeling;
 
         GameObject building = emptyBuildings[Random.Range(0, emptyBuildings.Length)];
+        if (Main.IS_DEBUG) building = emptyBuildings[0];
 
         if (!building.GetComponent<Building>().IsEmpty()) Debug.LogError("BUILDING ALREADY ASSIGNED!!!");
 

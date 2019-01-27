@@ -7,7 +7,7 @@ public class CloudManager : MonoBehaviour
     private int maxClouds = 100;
     private int numClouds = 0;
     private float lastSpawnTime = -1;
-    public int spawnInterval = 2;
+    public int spawnInterval = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class CloudManager : MonoBehaviour
 
             float y = Random.Range(5.0f, 12.0f);
             newCloud.transform.parent = this.gameObject.transform;
-            newCloud.transform.position = new Vector3(Random.Range(-10, 30), y, Random.Range(-20, 10));
+            newCloud.transform.localPosition = new Vector3(Random.Range(-10, 30), y, Random.Range(-20, 10));
             newCloud.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             newCloud.GetComponent<Cloud>().speed = y / 40.0f;
 

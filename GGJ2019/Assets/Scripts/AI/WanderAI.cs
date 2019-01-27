@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class WanderAI : MonoBehaviour
@@ -23,6 +24,11 @@ public class WanderAI : MonoBehaviour
         if (timer > wanderTimer)
         {
             Vector3 newPos = PeopleManager.GetRandomPersonPosition();
+            if (Main.IS_DEBUG)
+            {
+                GameObject[] roads = new List<GameObject>(GameObject.FindGameObjectsWithTag("Road")).FindAll(g => g.transform.IsChildOf(LevelManager.GetCurrentMap().transform)).ToArray();
+                newPos = roads[10].transform.position;
+            }
             agent.SetDestination(newPos);
             target = newPos;
             timer = 0;

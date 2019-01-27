@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Buildings
   - Obstacle
+  - People
+  - Road
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
+  - Minimap
+  - Clouds
+  - Person
   - 
   - 
   - 

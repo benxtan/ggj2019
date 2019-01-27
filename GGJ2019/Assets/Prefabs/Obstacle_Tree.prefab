@@ -150,10 +150,12 @@ MonoBehaviour:
   rotateObject: 0
   obstacleDeathTime: 10
   obstacleTimer: 0
-  obstacleName: 
-  startState: {fileID: 4535166599029623463}
-  endState: {fileID: 5130843318669427727}
-  navObstacle: {fileID: 0}
+  obstacleName: Tree
+  startState:
+  - {fileID: 4535166599029623463}
+  endState:
+  - {fileID: 5130843318669427727}
+  navObstacle: {fileID: 5130843317402865481}
 --- !u!208 &5130843317402865481
 NavMeshObstacle:
   m_ObjectHideFlags: 0

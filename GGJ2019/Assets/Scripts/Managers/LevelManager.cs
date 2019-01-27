@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public int currentLevel = 0;
+    public static int currentLevel = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        InitLevel(1);
     }
 
-    void InitLevel(int level)
+    public static void InitLevel(int level)
     {
         currentLevel = level;
 

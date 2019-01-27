@@ -25,7 +25,7 @@ public class CloudManager : MonoBehaviour
 
             float y = Random.Range(5.0f, 12.0f);
             newCloud.transform.parent = this.gameObject.transform;
-            newCloud.transform.position = new Vector3(Random.Range(-10, 30), y, Random.Range(-20, 10));
+            newCloud.transform.localPosition = new Vector3(Random.Range(-10, 30), y, Random.Range(-20, 10));
             newCloud.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             newCloud.GetComponent<Cloud>().speed = y / 40.0f;
 

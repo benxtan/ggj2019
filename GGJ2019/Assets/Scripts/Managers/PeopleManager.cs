@@ -38,7 +38,7 @@ public class PeopleManager : MonoBehaviour
     {
         // Get all objects with the tag "Road" and check if it is a child of the current Map
         GameObject[] roads = new List<GameObject>(GameObject.FindGameObjectsWithTag("Road")).FindAll(g => g.transform.IsChildOf(LevelManager.GetCurrentMap().transform)).ToArray();
-        if (Main.IS_DEBUG) return roads[0].transform.position;
+        if (Main.IS_DEBUG) return roads[Random.Range(0, 10)].transform.position;
         return roads[Random.Range(0, roads.Length)].transform.position;
     }
 

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4535166599029623465}
-  - component: {fileID: 4535166599029623461}
   - component: {fileID: 4535166599029623462}
+  - component: {fileID: 5149356789337442708}
   m_Layer: 0
   m_Name: Tree_Start
   m_TagString: Untagged
@@ -33,25 +33,6 @@ Transform:
   m_Father: {fileID: 5130843317402865483}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!114 &4535166599029623461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4535166599029623463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa016c347e8284c4e81032c76434b497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTriggered: 0
-  rotateObject: 0
-  obstacleDeathTime: 0
-  name: Tree
-  startState: {fileID: 0}
-  endState: {fileID: 0}
-  navObstacle: {fileID: 0}
 --- !u!212 &4535166599029623462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +81,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5149356789337442708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535166599029623463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0.2965914, g: 0.091224626, b: 0.4716981, a: 0.65882355}
+  glowBrightness: 4.8
+  outlineWidth: 4
+  alphaThreshold: 0.438
+  drawOutside: 1
+  enableInstancing: 0
 --- !u!1 &5130843317402865482
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +149,8 @@ MonoBehaviour:
   isTriggered: 0
   rotateObject: 0
   obstacleDeathTime: 10
-  name: Tree
+  obstacleTimer: 0
+  obstacleName: 
   startState: {fileID: 4535166599029623463}
   endState: {fileID: 5130843318669427727}
   navObstacle: {fileID: 0}
@@ -205,7 +205,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5130843318669427724}
-  - component: {fileID: 5130843318669427722}
   - component: {fileID: 5130843318669427725}
   m_Layer: 0
   m_Name: Tree Down
@@ -228,25 +227,6 @@ Transform:
   m_Father: {fileID: 5130843317402865483}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &5130843318669427722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5130843318669427727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa016c347e8284c4e81032c76434b497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTriggered: 0
-  rotateObject: 0
-  obstacleDeathTime: 0
-  name: Tree
-  startState: {fileID: 0}
-  endState: {fileID: 0}
-  navObstacle: {fileID: 0}
 --- !u!212 &5130843318669427725
 SpriteRenderer:
   m_ObjectHideFlags: 0

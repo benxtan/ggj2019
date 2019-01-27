@@ -39,12 +39,12 @@ public class ObstacleManager : MonoBehaviour
 
             if (thisObstacle.isTriggered && thisObstacle.obstacleDeathTime > 0)
             {
-                _timer += Time.deltaTime;
+                thisObstacle.obstacleTimer += Time.deltaTime;
 
-                if (_timer > thisObstacle.obstacleDeathTime)
+                if (thisObstacle.obstacleTimer > thisObstacle.obstacleDeathTime)
                 {
                     this.ResetState(thisObstacle);
-                    _timer = 0;
+                    thisObstacle.obstacleTimer = 0;
                 }
             }
         }

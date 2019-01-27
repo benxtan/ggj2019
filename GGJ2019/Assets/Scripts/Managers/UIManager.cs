@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
     public GameObject theEndPanel;
     public Button theEndButton;
 
+    public GameObject levelWinPanel;
+    public Text levelWinText;
+    public Button levelWinButton;
+
     public GameObject countdownText;
 
     private bool isLevelRunning = false;
@@ -41,21 +45,35 @@ public class UIManager : MonoBehaviour
         theEndButton = theEndPanel.transform.Find("TheEndButton").GetComponent<Button>();
         theEndButton.onClick.AddListener(TheEndButtonOnClick);
 
+        levelWinPanel = GameObject.Find("LevelWinPanel");
+        levelWinPanel.SetActive(false);
+        levelWinButton = levelWinPanel.transform.Find("LevelWinButton").GetComponent<Button>();
+        levelWinButton.onClick.AddListener(LevelWinButtonOnClick);
+        levelWinText = levelWinButton.transform.Find("LevelWinText").GetComponent<Text>();
+
         countdownText.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.IsLevelRunning())
+        if (LevelManager.isLevelRunning)
         {
             UpdateCountdown();
         }
 
-        if (isLevelRunning && !LevelManager.IsLevelRunning())
+        if (isLevelRunning && !LevelManager.isLevelRunning)
         {
             isLevelRunning = false;
-            TimesUp();
+
+            if (LevelManager.levelFinishedTimeInSeconds > 0)
+            {
+                ShowLevelWinPanel();
+            }
+            else
+            {
+                ShowTimesUpPanel();
+            }
         }
     }
 
@@ -125,7 +143,34 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void TimesUp()
+    public void ShowLevelWinPanel()
+    {
+        float timeElapsed = LevelManager.levelMaxTimeInSeconds - LevelManager.levelFinishedTimeInSeconds;
+        int minutes = (int) Mathf.Floor(timeElapsed / 60);
+        int seconds = (int) Mathf.RoundToInt(timeElapsed % 60);
+
+        string timeString = minutes > 0 ? minutes.ToString() + "m" : "";
+        timeString += seconds + "s";
+
+        // > 90 = 3 stars
+        // > 84 = 2 stars
+        // > 50 = 1 star
+        float score = Mathf.RoundToInt((LevelManager.levelFinishedTimeInSeconds / LevelManager.levelMaxTimeInSeconds) * 100);
+        Debug.Log("Score:" + score);
+        string stars = "";
+        if (score >= 90) stars = "* * *";
+        else if (score >= 84) stars = "* *";
+        else if (score >= 50) stars = "*";
+        else stars = "-";
+
+        levelWinText.text = "CONGRATULATIONS!\r\n" +
+            "You got " +  LevelManager.numLevelPeople + " " + (LevelManager.numLevelPeople == 1 ? "person" : " people") + " safely home\r\n" +
+            "in " + timeString + "\r\n" +
+            stars;
+        levelWinPanel.SetActive(true);
+    }
+
+    public void ShowTimesUpPanel()
     {
         countdownText.SetActive(false);
         timesUpPanel.SetActive(true);
@@ -134,5 +179,10 @@ public class UIManager : MonoBehaviour
     private void TheEndButtonOnClick()
     {
         ShowSplashScreen();
+    }
+
+    private void LevelWinButtonOnClick()
+    {
+        TimesUpButtonOnClick();
     }
 }

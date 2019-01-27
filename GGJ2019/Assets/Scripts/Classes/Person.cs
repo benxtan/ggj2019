@@ -62,7 +62,8 @@ public class Person : MonoBehaviour
                     building.SetPersonHome();
 
                     // Person - Disappear
-                    Destroy(this.gameObject);
+                    gameObject.SetActive(false);
+                    PeopleManager.UpdateLevelPeople();
                 }
             }
         }

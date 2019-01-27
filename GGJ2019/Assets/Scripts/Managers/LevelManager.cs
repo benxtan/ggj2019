@@ -8,13 +8,15 @@ public class LevelManager : MonoBehaviour
     public static int currentLevel = 0;
     public static float levelStartTimeInSeconds = 0;
     public static float levelMaxTimeInSeconds = 0;
+    public static float levelFinishedTimeInSeconds = 0;
 
     private static GameObject map01;
     private static GameObject map02;
 
+    public static bool isLevelRunning = false;
     private static bool isTimesUpDone = false;
 
-    private static int numPeople;
+    public static int numLevelPeople;
 
     void Start()
     {
@@ -36,6 +38,10 @@ public class LevelManager : MonoBehaviour
     {
         currentLevel = level;
 
+        levelStartTimeInSeconds = 0;
+        levelMaxTimeInSeconds = 0;
+        levelFinishedTimeInSeconds = 0;
+
         isTimesUpDone = false;
 
         // Destroy all people
@@ -46,24 +52,24 @@ public class LevelManager : MonoBehaviour
         }
           
         // Initialise level
-        numPeople = 0;
+        numLevelPeople = 0;
         if (level == 1)
         {
             InitMap(1);
-            levelMaxTimeInSeconds = 5;
-            numPeople = 1;
+            levelMaxTimeInSeconds = 60;
+            numLevelPeople = 1;
         }
         else if (level == 2)
         {
             InitMap(1);
-            levelMaxTimeInSeconds = 5;
-            numPeople = 2;
+            levelMaxTimeInSeconds = 60;
+            numLevelPeople = 2;
         }
         else if (level == 3)
         {
             InitMap(2);
-            levelMaxTimeInSeconds = 5;
-            numPeople = 5;
+            levelMaxTimeInSeconds = 120;
+            numLevelPeople = 3;
         }
 
         // Initialise buildings for this level
@@ -100,23 +106,28 @@ public class LevelManager : MonoBehaviour
         isTimesUpDone = false;
 
         // Create people and their respective homes
-        for (int i = 0; i < numPeople; i++)
+        for (int i = 0; i < numLevelPeople; i++)
         {
             GameObject person = PeopleManager.CreatePerson();
             BuildingManager.CreateHomeFor(person);
         }
 
+        // Initialise people for this level
+        PeopleManager.InitLevelPeople();
+
         // Set level start time
         LevelManager.levelStartTimeInSeconds = Time.time;
+
+        LevelManager.isLevelRunning = true;
     }
 
-    public static bool IsLevelRunning()
+    /*public static bool IsLevelRunning()
     {
         float timeElapsed = Time.time - LevelManager.levelStartTimeInSeconds;
         float timeRemaining = LevelManager.levelMaxTimeInSeconds - timeElapsed;
 
         return LevelManager.currentLevel > 0 && timeRemaining > 0;
-    }
+    }*/
 
     public static GameObject GetCurrentMap()
     {
@@ -132,27 +143,39 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (LevelManager.currentLevel > 0)
+        if (LevelManager.isLevelRunning)
         {
-            if (!isTimesUpDone)
+            float timeElapsed = Time.time - LevelManager.levelStartTimeInSeconds;
+            float timeRemaining = LevelManager.levelMaxTimeInSeconds - timeElapsed;
+
+            if (timeRemaining <= 0)
             {
-                float timeElapsed = Time.time - LevelManager.levelStartTimeInSeconds;
-                float timeRemaining = LevelManager.levelMaxTimeInSeconds - timeElapsed;
+                isTimesUpDone = true;
 
-                if (timeRemaining <= 0)
+                // Times up
+                LevelManager.isLevelRunning = false;
+
+                // TODO: turn off the nav mesh agent on all people to stop them from walking
+                GameObject[] people = GameObject.FindGameObjectsWithTag("People");
+                for (int i = 0; i < people.Length; i++)
                 {
-                    isTimesUpDone = true;
-
-                    // Times up!
-                    // TODO: turn off the nav mesh agent on all people to stop them from walking
-                    GameObject[] people = GameObject.FindGameObjectsWithTag("People");
-                    for (int i = 0; i < people.Length; i++)
-                    {
-                        people[i].GetComponent<NavMeshAgent>().enabled = false;
-                        people[i].GetComponent<WanderAI>().enabled = false;
-                    }
+                    people[i].GetComponent<NavMeshAgent>().enabled = false;
+                    people[i].GetComponent<WanderAI>().enabled = false;
                 }
             }
+            else
+            {
+                // TODO: Check if there are any people left roaming around
+                if (PeopleManager.people.Length == 0)
+                {
+                    // You finished the level in time!
+                    levelFinishedTimeInSeconds = timeRemaining;
+
+                    // All the people got home
+                    LevelManager.isLevelRunning = false;
+                }
+            }
+
         }
     }
 }

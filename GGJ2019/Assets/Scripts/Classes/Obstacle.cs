@@ -28,9 +28,14 @@ public class Obstacle : MonoBehaviour
 
     void CheckRotation() {
         if (this.rotateObject == true) {
-            this.transform.Rotate(0, -90, 0, Space.World);
+            this.transform.Rotate(0, -89, 0, Space.World);
             this.startState.transform.Rotate(0, 90, 0, Space.World);
-            // this.startState.transform.GetChild(0).transform.position()
+            //this.startState.transform.GetChild(0).transform.position()
+
+
+            BoxCollider2D collider = GetComponent<BoxCollider2D>();
+            collider.size = new Vector2(40, 2);
+            collider.offset = new Vector2(0, 1);
         }
     }
 

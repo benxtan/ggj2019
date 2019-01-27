@@ -64,6 +64,7 @@ public class Person : MonoBehaviour
                     // Person - Disappear
                     gameObject.SetActive(false);
                     PeopleManager.UpdateLevelPeople();
+                    UIManager.UpdatePeopleScore();
                 }
             }
         }

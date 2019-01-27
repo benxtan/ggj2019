@@ -38,6 +38,7 @@ public class Person : MonoBehaviour
         else if (feeling.feelingType == FeelingManager.FeelingType.Fish) iconIndex = 1;
         else if (feeling.feelingType == FeelingManager.FeelingType.Love) iconIndex = 2;
         gameObject.transform.Find("Bubble/Icon").GetComponent<SpriteRenderer>().sprite = icons[iconIndex];
+        gameObject.transform.Find("Bubble/MinimapIcon").GetComponent<SpriteRenderer>().sprite = icons[iconIndex];
 
         //Debug.Log("New Person:" + feeling);
     }

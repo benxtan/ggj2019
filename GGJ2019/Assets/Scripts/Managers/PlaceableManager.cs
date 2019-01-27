@@ -55,10 +55,12 @@ public class PlaceableManager : MonoBehaviour
                     _eventSystem.SetSelectedGameObject(gameObject);
 
                     if (gameObject.tag == "Road") {
-                        
+
+                        Debug.Log("TEST!!!!");
+
                         if (cooldownTimer == 0) {
                             this._placed = true;
-                            GameObject placeable = Instantiate(this.placeables[0], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+                            GameObject placeable = Instantiate(this.placeables[0], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.25f, gameObject.transform.position.z), Quaternion.identity);
                             placeable.transform.parent = GameObject.Find("Obstacles").transform;
                         }               
                     }

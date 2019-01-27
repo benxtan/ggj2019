@@ -37,6 +37,9 @@ public class BuildingManager : MonoBehaviour
         GameObject building = emptyBuildings[Random.Range(0, emptyBuildings.Length)];
         if (Main.IS_DEBUG) building = emptyBuildings[0];
 
+        // Hacks! to make person go into house from North and South
+        building.GetComponent<BoxCollider>().size = new Vector3(4.0f, 1.0f, 3.0f);
+
         if (!building.GetComponent<Building>().IsEmpty()) Debug.LogError("BUILDING ALREADY ASSIGNED!!!");
 
         //Debug.Log(building.name + " " + building.GetComponent<Building>().IsEmpty());

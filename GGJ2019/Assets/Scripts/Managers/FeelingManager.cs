@@ -7,6 +7,10 @@ public class FeelingManager : MonoBehaviour
         Beer,
         Fish,
         Love,
+        Game,
+        Gym,
+        Sleep,
+        Bath
     }
 
     // Start is called before the first frame update

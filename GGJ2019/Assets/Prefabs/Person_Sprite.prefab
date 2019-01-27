@@ -356,8 +356,12 @@ MonoBehaviour:
   health: 100
   icons:
   - {fileID: 21300004, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
-  - {fileID: 21300018, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
+  - {fileID: 21300012, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
   - {fileID: 21300008, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
+  - {fileID: 21300034, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
+  - {fileID: 21300028, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
+  - {fileID: 21300030, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
+  - {fileID: 21300032, guid: b8b09a25f82c4944fa2e1c77e694950c, type: 3}
   _feelingString: 
 --- !u!136 &2674958690773662220
 CapsuleCollider:
@@ -396,11 +400,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8814104368995663827}
     m_Modifications:
-    - target: {fileID: 7308962358521866623, guid: 72cbd204c59784c58b91ce0d9cec81a3,
-        type: 3}
-      propertyPath: m_Name
-      value: Person_Anim
-      objectReference: {fileID: 0}
     - target: {fileID: 7308962358521866608, guid: 72cbd204c59784c58b91ce0d9cec81a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -455,6 +454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308962358521866623, guid: 72cbd204c59784c58b91ce0d9cec81a3,
+        type: 3}
+      propertyPath: m_Name
+      value: Person_Anim
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72cbd204c59784c58b91ce0d9cec81a3, type: 3}

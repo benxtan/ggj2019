@@ -37,6 +37,10 @@ public class Person : MonoBehaviour
         if (feeling.feelingType == FeelingManager.FeelingType.Beer) iconIndex = 0;
         else if (feeling.feelingType == FeelingManager.FeelingType.Fish) iconIndex = 1;
         else if (feeling.feelingType == FeelingManager.FeelingType.Love) iconIndex = 2;
+        else if (feeling.feelingType == FeelingManager.FeelingType.Game) iconIndex = 3;
+        else if (feeling.feelingType == FeelingManager.FeelingType.Gym) iconIndex = 4;
+        else if (feeling.feelingType == FeelingManager.FeelingType.Sleep) iconIndex = 5;
+        else if (feeling.feelingType == FeelingManager.FeelingType.Bath) iconIndex = 6;
         gameObject.transform.Find("Bubble/Icon").GetComponent<SpriteRenderer>().sprite = icons[iconIndex];
         gameObject.transform.Find("Bubble/MinimapIcon").GetComponent<SpriteRenderer>().sprite = icons[iconIndex];
 

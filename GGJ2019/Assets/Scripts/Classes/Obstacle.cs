@@ -10,8 +10,8 @@ public class Obstacle : MonoBehaviour
     public float obstacleDeathTime;
     public float obstacleTimer;
     public string obstacleName;
-    public GameObject startState;
-    public GameObject endState;
+    public GameObject[] startState;
+    public GameObject[] endState;
     public NavMeshObstacle navObstacle;
 
     // Start is called before the first frame update
@@ -29,9 +29,11 @@ public class Obstacle : MonoBehaviour
     void CheckRotation() {
         if (this.rotateObject == true) {
             this.transform.Rotate(0, -89, 0, Space.World);
-            this.startState.transform.Rotate(0, 90, 0, Space.World);
-            //this.startState.transform.GetChild(0).transform.position()
 
+            foreach (var obs in this.startState)
+            {
+                obs.transform.Rotate(0, 90, 0, Space.World);
+            }        
 
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.size = new Vector2(40, 2);
@@ -42,8 +44,15 @@ public class Obstacle : MonoBehaviour
     void OnMouseDown(){
         this.isTriggered = true;
 
-        this.startState.SetActive(false);
-        this.endState.SetActive(true);
+        foreach (var obs in this.startState)
+        {
+            obs.SetActive(false);
+        }
+
+        foreach (var obs in this.endState)
+        {
+            obs.SetActive(true);
+        }
 
         this.navObstacle.enabled = true;
     }

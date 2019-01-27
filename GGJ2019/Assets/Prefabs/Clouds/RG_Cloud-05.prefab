@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 889720115866153439}
   - component: {fileID: 1338654150094499638}
   - component: {fileID: 90311349528821807}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RG_Cloud-05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,3 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2b8a831d7a6a948a616a74916670e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.1

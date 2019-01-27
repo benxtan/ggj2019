@@ -24,8 +24,15 @@ public class ObstacleManager : MonoBehaviour
     {
         obstacle.isTriggered = false;
 
-        obstacle.startState.SetActive(true);
-        obstacle.endState.SetActive(false);
+        foreach (var obs in obstacle.startState)
+        {
+            obs.SetActive(true);
+        }
+
+        foreach (var obs in obstacle.endState)
+        {
+            obs.SetActive(false);
+        }
 
         obstacle.navObstacle.enabled = false;
     }

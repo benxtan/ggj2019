@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public Button levelWinButton;
 
     public GameObject countdownText;
+    public static Text peopleScoreText;
 
     private bool isLevelRunning = false;
 
@@ -50,6 +51,9 @@ public class UIManager : MonoBehaviour
         levelWinButton = levelWinPanel.transform.Find("LevelWinButton").GetComponent<Button>();
         levelWinButton.onClick.AddListener(LevelWinButtonOnClick);
         levelWinText = levelWinButton.transform.Find("LevelWinText").GetComponent<Text>();
+
+        peopleScoreText = GameObject.Find("PeopleScoreText").GetComponent<Text>();
+        peopleScoreText.gameObject.SetActive(false);
 
         countdownText.SetActive(false);
     }
@@ -84,6 +88,7 @@ public class UIManager : MonoBehaviour
         timesUpPanel.SetActive(false);
         theEndPanel.SetActive(false);
         countdownText.SetActive(false);
+        peopleScoreText.gameObject.SetActive(false);
 
         LevelManager.InitLevel(1);
     }
@@ -100,9 +105,11 @@ public class UIManager : MonoBehaviour
         startPanel.SetActive(false);
         countdownText.SetActive(true);
         countdownText.GetComponent<Text>().text = "00:00:00";
-
+        
         LevelManager.StartLevel();
         isLevelRunning = true;
+
+        UpdatePeopleScore();
     }
 
     private void UpdateCountdown()
@@ -127,13 +134,14 @@ public class UIManager : MonoBehaviour
     private void TimesUpButtonOnClick()
     {
         countdownText.SetActive(false);
+        peopleScoreText.gameObject.SetActive(false);
         timesUpPanel.SetActive(false);
 
         if (LevelManager.currentLevel < LevelManager.numLevels)
         {
             startLevelText.text = "LEVEL " + (LevelManager.currentLevel + 1);
-            startPanel.gameObject.SetActive(true);
-
+            startPanel.SetActive(true);
+            
             LevelManager.InitNextLevel();
         }
         else
@@ -172,7 +180,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowTimesUpPanel()
     {
-        countdownText.SetActive(false);
         timesUpPanel.SetActive(true);
     }
 
@@ -185,5 +192,11 @@ public class UIManager : MonoBehaviour
     {
         levelWinPanel.SetActive(false);
         TimesUpButtonOnClick();
+    }
+
+    public static void UpdatePeopleScore()
+    {
+        peopleScoreText.gameObject.SetActive(true);
+        peopleScoreText.text = PeopleManager.GetNumPeopleAtHome() + "/" + LevelManager.numLevelPeople;
     }
 }

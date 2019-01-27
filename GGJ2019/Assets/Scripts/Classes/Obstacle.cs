@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     public bool isTriggered = false;
     public bool rotateObject = false;
     public float obstacleDeathTime;
+    public float obstacleTimer;
     public string obstacleName;
     public GameObject startState;
     public GameObject endState;

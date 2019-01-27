@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507051071212284436}
   - component: {fileID: 1507051071212284443}
+  - component: {fileID: 510780961}
   m_Layer: 0
   m_Name: Road_Corner_Down_Right
   m_TagString: Road
@@ -81,6 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &510780961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507051071212284437}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.1200013, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6038259164527606227
 GameObject:
   m_ObjectHideFlags: 0

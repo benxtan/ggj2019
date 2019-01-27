@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0cccddfa100414b908e27a320804c1d5
 TextureImporter:
   fileIDToRecycleName:
@@ -8,11 +9,20 @@ TextureImporter:
     21300006: man_small_0
     21300008: man_small_1
     21300010: man_small_2
+=======
+guid: 98e3495f1de5a854fa73b9d0bc1b9e42
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> f1b6c72b9d2fccd3754a5c27303cb00f7c2082da
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD
     enableMipMap: 0
+=======
+    enableMipMap: 1
+>>>>>>> f1b6c72b9d2fccd3754a5c27303cb00f7c2082da
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -40,6 +50,7 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
+<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: -1
@@ -47,6 +58,15 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+=======
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+>>>>>>> f1b6c72b9d2fccd3754a5c27303cb00f7c2082da
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -55,9 +75,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
+<<<<<<< HEAD
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
+=======
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> f1b6c72b9d2fccd3754a5c27303cb00f7c2082da
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -75,6 +101,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -213,6 +240,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 21b2baaa68eb04518b6c3beb714919f1
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+>>>>>>> f1b6c72b9d2fccd3754a5c27303cb00f7c2082da
     vertices: []
     indices: 
     edges: []

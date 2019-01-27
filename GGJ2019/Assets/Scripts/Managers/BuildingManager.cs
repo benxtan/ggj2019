@@ -9,6 +9,16 @@ public class BuildingManager : MonoBehaviour
     {
         BuildingManager.buildings = new List<GameObject>(GameObject.FindGameObjectsWithTag("Buildings")).FindAll(g => g.transform.IsChildOf(LevelManager.GetCurrentMap().transform)).ToArray();
         Debug.Log("Num Buildings: " + buildings.Length);
+
+        Building building;
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            building = buildings[i].GetComponent<Building>();
+            if (!building.isPersonHome)
+            {
+                building.Reset();
+            }
+        }
     }
 
     public static GameObject CreateHomeFor(GameObject person)

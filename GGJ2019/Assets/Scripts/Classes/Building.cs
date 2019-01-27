@@ -25,6 +25,12 @@ public class Building : MonoBehaviour
         {
             _feeling = value;
 
+            if (value == null)
+            {
+                transform.Find("Bubble").gameObject.SetActive(false);
+                return;
+            }
+
             // Set bubble icon
             int iconIndex = 0;
             if (feeling.feelingType == FeelingManager.FeelingType.Beer) iconIndex = 0;
@@ -63,5 +69,11 @@ public class Building : MonoBehaviour
         transform.Find("Left").GetComponent<Renderer>().material = materials[3];
         transform.Find("Top").GetComponent<Renderer>().material = materials[5];
         transform.Find("Front").GetComponent<Renderer>().material = materials[4];
+    }
+
+    public void Reset()
+    {
+        isPersonHome = false;
+        this.feeling = null;
     }
 }

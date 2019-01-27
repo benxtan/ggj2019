@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
         }
 
         // DEBUG
-        levelMaxTimeInSeconds = 5;
+        //levelMaxTimeInSeconds = 5;
 
         // Initialise buildings for this level
         BuildingManager.InitLevelBuildings();

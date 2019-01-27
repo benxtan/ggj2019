@@ -28,11 +28,9 @@ public class Obstacle : MonoBehaviour
 
     void CheckRotation() {
         if (this.rotateObject == true) {
-            this.transform.Rotate(0, -89, 0, Space.World);
-
             foreach (var obs in this.startState)
             {
-                obs.transform.Rotate(0, 90, 0, Space.World);
+            this.transform.Rotate(0, -89, 0, Space.World);
             }        
 
             BoxCollider2D collider = GetComponent<BoxCollider2D>();

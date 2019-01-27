@@ -2392,11 +2392,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _TownMaker
       objectReference: {fileID: 0}
-    - target: {fileID: 5710781633165417216, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7245580087665544954, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2454,126 +2449,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
         type: 3}
-      propertyPath: roadTiles.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: houseTiles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: grass
-      value: 
-      objectReference: {fileID: 6342670346572612494, guid: 5d095950a4e9947ba929c5ce66100d40,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[0]
-      value: 
-      objectReference: {fileID: 8615296192068517252, guid: 64df0cef3502f4c488c224e92948c9be,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[1]
-      value: 
-      objectReference: {fileID: 4767077903727674015, guid: 3b9525eb2ecce4fdf99aed4311129e3d,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[2]
-      value: 
-      objectReference: {fileID: 8403905892763018660, guid: ffa760b3a418748d08cae718ae9965b3,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[3]
-      value: 
-      objectReference: {fileID: 6503851995543385150, guid: 497308e3c322e4f7b8b77db77f1d05f0,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[4]
-      value: 
-      objectReference: {fileID: 2097982098072754347, guid: 5ff83b866e11a411ab69e5d505b5f345,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[5]
-      value: 
-      objectReference: {fileID: 5776023178406005564, guid: 9af8f53e7fb8d45668f37bb323e4635b,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[6]
-      value: 
-      objectReference: {fileID: 533363831450298632, guid: 6c9bfd8e7c5384c1684f068a7ec46672,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[7]
-      value: 
-      objectReference: {fileID: 4106055400485629158, guid: 798fa085f14a4490bb39b1721f20e44e,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[11]
-      value: 
-      objectReference: {fileID: 3072382415854098455, guid: 7742216014c1c48e28212f0fdc47e352,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[10]
-      value: 
-      objectReference: {fileID: 3796711312997849393, guid: 453dc4c4a84944f0fa1c1feb707c3462,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[9]
-      value: 
-      objectReference: {fileID: 4820476047584368584, guid: e6480af11d2204a57a39739cf312e0e0,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: roadTiles.Array.data[8]
-      value: 
-      objectReference: {fileID: 1507051071212284437, guid: eb509f834ff5b47ab862b2e5081ac000,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: grassTile
-      value: 
-      objectReference: {fileID: 6342670346572612494, guid: 5d095950a4e9947ba929c5ce66100d40,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: houseTiles.Array.data[0]
-      value: 
-      objectReference: {fileID: 937027106, guid: 4a8f1a62944294bd9afe797e4721a30f,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
       propertyPath: level
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: houseTiles.Array.data[1]
-      value: 
-      objectReference: {fileID: 937027106, guid: b56543d4faf8c734f9fdfd65730ac948,
-        type: 3}
-    - target: {fileID: 4419843345131520747, guid: edfc66d2f53c1f64599b5c18d13aa9ab,
-        type: 3}
-      propertyPath: houseTiles.Array.data[2]
-      value: 
-      objectReference: {fileID: 937027106, guid: 7a3e27bb466e8b343a4eb97ae1cab7ed,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edfc66d2f53c1f64599b5c18d13aa9ab, type: 3}
 --- !u!1001 &2119123766

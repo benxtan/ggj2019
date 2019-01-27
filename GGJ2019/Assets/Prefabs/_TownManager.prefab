@@ -43,3 +43,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ee4082965f373489c80bde3165a133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  grassTile: {fileID: 6342670346572612494, guid: 5d095950a4e9947ba929c5ce66100d40,
+    type: 3}
+  _litGrassTile: {fileID: 6342670346572612494, guid: 417cf5eb73270074db76d09566bdf6e4,
+    type: 3}
+  roadTiles:
+  - {fileID: 8615296192068517252, guid: 64df0cef3502f4c488c224e92948c9be, type: 3}
+  - {fileID: 4767077903727674015, guid: 3b9525eb2ecce4fdf99aed4311129e3d, type: 3}
+  - {fileID: 8403905892763018660, guid: ffa760b3a418748d08cae718ae9965b3, type: 3}
+  - {fileID: 6503851995543385150, guid: 497308e3c322e4f7b8b77db77f1d05f0, type: 3}
+  - {fileID: 2097982098072754347, guid: 5ff83b866e11a411ab69e5d505b5f345, type: 3}
+  - {fileID: 5776023178406005564, guid: 9af8f53e7fb8d45668f37bb323e4635b, type: 3}
+  - {fileID: 533363831450298632, guid: 6c9bfd8e7c5384c1684f068a7ec46672, type: 3}
+  - {fileID: 4106055400485629158, guid: 798fa085f14a4490bb39b1721f20e44e, type: 3}
+  - {fileID: 1507051071212284437, guid: eb509f834ff5b47ab862b2e5081ac000, type: 3}
+  - {fileID: 4820476047584368584, guid: e6480af11d2204a57a39739cf312e0e0, type: 3}
+  - {fileID: 3796711312997849393, guid: 453dc4c4a84944f0fa1c1feb707c3462, type: 3}
+  - {fileID: 3072382415854098455, guid: 7742216014c1c48e28212f0fdc47e352, type: 3}
+  houseTiles:
+  - {fileID: 937027106, guid: 4a8f1a62944294bd9afe797e4721a30f, type: 3}
+  - {fileID: 937027106, guid: b56543d4faf8c734f9fdfd65730ac948, type: 3}
+  - {fileID: 937027106, guid: 7a3e27bb466e8b343a4eb97ae1cab7ed, type: 3}

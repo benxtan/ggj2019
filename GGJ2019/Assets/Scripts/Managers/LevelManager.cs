@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,13 +13,21 @@ public class LevelManager : MonoBehaviour
     {
         currentLevel = level;
 
+        int numPeople = 0;
         if (level == 1)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                GameObject person = PeopleManager.CreatePerson();
-                BuildingManager.CreateHomeFor(person);
-            }
+            numPeople = 1;
+            GameObject.Find("Camera Target").transform.position = new Vector3(9, 0, -4);
+        }
+        if (level == 2)
+        {
+            numPeople = 5;
+        }
+
+        for (int i = 0; i < numPeople; i++)
+        {
+            GameObject person = PeopleManager.CreatePerson();
+            BuildingManager.CreateHomeFor(person);
         }
     }
 

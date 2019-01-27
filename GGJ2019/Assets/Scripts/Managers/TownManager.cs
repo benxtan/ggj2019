@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TownManager : MonoBehaviour
 {
+    public int level = 1;
+
     public GameObject grassTile;
     public GameObject[] roadTiles;
     public GameObject[] houseTiles;
@@ -16,53 +18,69 @@ public class TownManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        parent = GameObject.Find("Environment");
-        
-        //CreateGrassTown();
+        parent = GameObject.Find("Map00");
 
-        string map =
-           "GGGGGGGGGGGGGGGGGGGGGGGGG" +
-           "GRRRGGGGHHHGHGHGHGGGGGGGG" +
-           "GRGRHGRRRRRRRRRRRRHGGGGGG" +
-           "GRHRGHRHHRHHRHHRGRRGHGHGG" +
-           "GRGRHGRGGRGGRGGRHGRRRRRRG" +
-           
-           "GRHRGHRHHRHHRHHRGGHRHGHRG" +
-           "GRGRHGRGGRGGRGGRHGGRGGGRG" +
-           "GRHRGHRHHRHHRHHRGGHRHGHRG" +
-           "GRGRHGRGGRGGRGGRHGGRGGGRG" +
-           "GRHRGHRHHRHHRHHRGGHRHGHRG" +
+        string map;
 
-           "GRRRHGRGGRGGRGGRHGGRGGGRG" +
-           "GRHRGGRHHRHHRHHRGGHRHGHRG" +
-           "GRGRRRRRRRRRRRRRRRRRRRRRG" +
-           "GRHRGGGGGRGGGGGRGGGGGGGRG" +
-           "GRGRRRRRRRRRRRRRRRRRRRRRG" +
-           
-           "GRHRGHGRGHGRGGGRGGGRGGGRG" +
-           "GRGRHGHRHGHRHGHRGGGRGHRRG" +
-           "GRRRGGGRGGGRGGGRGGGRGGGRG" +
-           "GRHRHGHRHGHRHGHRGGGRGHRRG" +
-           "GRHRGGGRGGGRGGGRGGGRGGGRG" +
-           
-           "GRGRHGHRHGHRGHRRGGGRRGGRG" +
-           "GRHRGGGRGGGRGRRGGGGGRRGRG" +
-           "GRHRGHGRGHGRRRHGGGGGGRRRG" +
-           "GRRRRRRRRRRRGGGGGGGGGGGGG" +
-           "GGGGGGGGGGGGGGGGGGGGGGGGG";
+        if (level == 0)
+        {
+            CreateGrassTown();
+        }
+        else if (level == 1)
+        {
+            townWidth = 10;
+            townHeight = 5;
 
-        //CreateTown(map);
+            // Tutorial map
+            map =
+                "RRRRRRRRRR" +
+                "RHRHGGHRHR" +
+                "RHRHGGHRHR" +
+                "RHRHGGHRHR" +
+                "RRRRRRRRRR";
 
-        townWidth = 10;
-        townHeight = 5;
-        string map2 =
-            "RRRRRRRRRR" +
-            "RHRHGGHRHR" +
-            "RHRHGGHRHR" +
-            "RHRHGGHRHR" +
-            "RRRRRRRRRR";
+            CreateTown(map);
 
-        CreateTown(map2);
+        }
+        else if (level == 2)
+        {
+            townWidth = 25;
+            townHeight = 25;
+
+            // Lee's map
+            map =
+               "GGGGGGGGGGGGGGGGGGGGGGGGG" +
+               "GRRRGGGGHHHGHGHGHGGGGGGGG" +
+               "GRGRHGRRRRRRRRRRRRHGGGGGG" +
+               "GRHRGHRHHRHHRHHRGRRGHGHGG" +
+               "GRGRHGRGGRGGRGGRHGRRRRRRG" +
+
+               "GRHRGHRHHRHHRHHRGGHRHGHRG" +
+               "GRGRHGRGGRGGRGGRHGGRGGGRG" +
+               "GRHRGHRHHRHHRHHRGGHRHGHRG" +
+               "GRGRHGRGGRGGRGGRHGGRGGGRG" +
+               "GRHRGHRHHRHHRHHRGGHRHGHRG" +
+
+               "GRRRHGRGGRGGRGGRHGGRGGGRG" +
+               "GRHRGGRHHRHHRHHRGGHRHGHRG" +
+               "GRGRRRRRRRRRRRRRRRRRRRRRG" +
+               "GRHRGGGGGRGGGGGRGGGGGGGRG" +
+               "GRGRRRRRRRRRRRRRRRRRRRRRG" +
+
+               "GRHRGHGRGHGRGGGRGGGRGGGRG" +
+               "GRGRHGHRHGHRHGHRGGGRGHRRG" +
+               "GRRRGGGRGGGRGGGRGGGRGGGRG" +
+               "GRHRHGHRHGHRHGHRGGGRGHRRG" +
+               "GRHRGGGRGGGRGGGRGGGRGGGRG" +
+
+               "GRGRHGHRHGHRGHRRGGGRRGGRG" +
+               "GRHRGGGRGGGRGRRGGGGGRRGRG" +
+               "GRHRGHGRGHGRRRHGGGGGGRRRG" +
+               "GRRRRRRRRRRRGGGGGGGGGGGGG" +
+               "GGGGGGGGGGGGGGGGGGGGGGGGG";
+
+            CreateTown(map);
+        }
     }
 
     // Update is called once per frame
@@ -191,8 +209,6 @@ public class TownManager : MonoBehaviour
 
         // --------------------------------------------------------------------
 
-        Debug.Log(grid);
-
         // Just return NESW values - e.g. 0000
         // 0 1 2
         // 3 4 5
@@ -213,6 +229,6 @@ public class TownManager : MonoBehaviour
     {
         GameObject tile = Instantiate(go);
         tile.transform.parent = parent.transform;
-        tile.transform.position = new Vector3(x * 2, 0, -y * 2 - 10);
+        tile.transform.position = new Vector3(x * 2, 0, -y * 2);
     }
 }

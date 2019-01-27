@@ -69,8 +69,11 @@ public class LevelManager : MonoBehaviour
         {
             InitMap(2);
             levelMaxTimeInSeconds = 120;
-            numLevelPeople = 3;
+            numLevelPeople = 4;
         }
+
+        // DEBUG
+        levelMaxTimeInSeconds = 5;
 
         // Initialise buildings for this level
         BuildingManager.InitLevelBuildings();

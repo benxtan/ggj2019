@@ -8,14 +8,15 @@ public class UIManager : MonoBehaviour
 
     public GameObject startPanel;
     public Button startButton;
-
-    public GameObject countdownText;
+    public Text startLevelText;
 
     public GameObject timesUpPanel;
     public Button timesUpButton;
 
     public GameObject theEndPanel;
     public Button theEndButton;
+
+    public GameObject countdownText;
 
     private bool isLevelRunning = false;
 
@@ -30,6 +31,7 @@ public class UIManager : MonoBehaviour
         startPanel = GameObject.Find("StartPanel");
         startPanel.SetActive(false);
         startButton.onClick.AddListener(StartButtonOnClick);
+        startLevelText = startButton.transform.Find("StartLevelText").GetComponent<Text>();
 
         timesUpPanel.SetActive(false);
         timesUpButton.onClick.AddListener(TimesUpButtonOnClick);
@@ -72,6 +74,7 @@ public class UIManager : MonoBehaviour
     {
         splashPanel.SetActive(false);
         startPanel.SetActive(true);
+        startLevelText.text = "LEVEL 1";
     }
 
     private void StartButtonOnClick()
@@ -110,7 +113,9 @@ public class UIManager : MonoBehaviour
 
         if (LevelManager.currentLevel < LevelManager.numLevels)
         {
+            startLevelText.text = "LEVEL " + (LevelManager.currentLevel + 1);
             startPanel.gameObject.SetActive(true);
+
             LevelManager.InitNextLevel();
         }
         else

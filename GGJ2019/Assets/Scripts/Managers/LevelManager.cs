@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class LevelManager : MonoBehaviour
 {
-    public static int numLevels = 2;
+    public static int numLevels = 3;
 
     public static int currentLevel = 0;
     public static float levelStartTimeInSeconds = 0;
@@ -49,27 +49,50 @@ public class LevelManager : MonoBehaviour
         numPeople = 0;
         if (level == 1)
         {
-            map01.SetActive(true);
-            map02.SetActive(false);
-
-            levelMaxTimeInSeconds = 1;
+            InitMap(1);
+            levelMaxTimeInSeconds = 5;
             numPeople = 1;
-            GameObject.Find("Camera Target").transform.position = new Vector3(9, 0, -4);
-            Camera.main.orthographicSize = 6;
         }
-        if (level == 2)
+        else if (level == 2)
         {
-            map01.SetActive(false);
-            map02.SetActive(true);
-
-            levelMaxTimeInSeconds = 1;
+            InitMap(1);
+            levelMaxTimeInSeconds = 5;
+            numPeople = 2;
+        }
+        else if (level == 3)
+        {
+            InitMap(2);
+            levelMaxTimeInSeconds = 5;
             numPeople = 5;
-            GameObject.Find("Camera Target").transform.position = new Vector3(54, 0, -24);
-            Camera.main.orthographicSize = 10;
         }
 
-        // Buildings
+        // Initialise buildings for this level
         BuildingManager.InitLevelBuildings();
+    }
+
+    public static void InitMap(int map)
+    {
+        Vector3 cameraTargetPosition;
+        int orthographicSize;
+
+        if (map == 1)
+        {
+            cameraTargetPosition = new Vector3(9, 0, -4);
+            orthographicSize = 6;
+        }
+        else
+        {
+            cameraTargetPosition = new Vector3(54, 0, -24);
+            orthographicSize = 10;
+        }
+
+        // Map prefabs
+        map01.SetActive(map == 1);
+        map02.SetActive(map == 2);
+
+        // Camera
+        GameObject.Find("Camera Target").transform.position = cameraTargetPosition;
+        Camera.main.orthographicSize = orthographicSize;
     }
 
     public static void StartLevel()
@@ -97,7 +120,7 @@ public class LevelManager : MonoBehaviour
 
     public static GameObject GetCurrentMap()
     {
-        if (currentLevel == 1)
+        if (currentLevel == 1 || currentLevel == 2)
         {
             return map01;
         }

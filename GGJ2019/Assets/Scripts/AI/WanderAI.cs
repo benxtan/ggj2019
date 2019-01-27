@@ -37,12 +37,12 @@ public class WanderAI : MonoBehaviour
 
    void OnDrawGizmosSelected()
     {
-        // Display the wander radius when selected
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, this.wanderRadius);
+        // // Display the wander radius when selected
+        // Gizmos.color = Color.white;
+        // Gizmos.DrawWireSphere(transform.position, this.wanderRadius);
 
-        // Displays the navmesh target when selected
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(this.target, 1.0f);
+        // // Displays the navmesh target when selected
+        // Gizmos.color = Color.yellow;
+        // Gizmos.DrawSphere(this.target, 1.0f);
     }
 }

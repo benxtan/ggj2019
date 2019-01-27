@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Button timesUpButton;
 
     public GameObject theEndPanel;
+    public Button theEndButton;
 
     private bool isLevelRunning = false;
 
@@ -30,13 +31,15 @@ public class UIManager : MonoBehaviour
         startPanel.SetActive(false);
         startButton.onClick.AddListener(StartButtonOnClick);
 
-        countdownText.SetActive(false);
-
         timesUpPanel.SetActive(false);
         timesUpButton.onClick.AddListener(TimesUpButtonOnClick);
 
         theEndPanel = GameObject.Find("TheEndPanel");
         theEndPanel.SetActive(false);
+        theEndButton = theEndPanel.transform.Find("TheEndButton").GetComponent<Button>();
+        theEndButton.onClick.AddListener(TheEndButtonOnClick);
+
+        countdownText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,15 +57,26 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void ShowSplashScreen()
+    {
+        splashPanel.SetActive(true);
+        startPanel.SetActive(false);
+        timesUpPanel.SetActive(false);
+        theEndPanel.SetActive(false);
+        countdownText.SetActive(false);
+
+        LevelManager.InitLevel(1);
+    }
+
     private void SplashButtonOnClick()
     {
-        splashPanel.gameObject.SetActive(false);
-        startPanel.gameObject.SetActive(true);
+        splashPanel.SetActive(false);
+        startPanel.SetActive(true);
     }
 
     private void StartButtonOnClick()
     {
-        startPanel.gameObject.SetActive(false);
+        startPanel.SetActive(false);
         countdownText.SetActive(true);
         countdownText.GetComponent<Text>().text = "00:00:00";
 
@@ -110,5 +124,10 @@ public class UIManager : MonoBehaviour
     {
         countdownText.SetActive(false);
         timesUpPanel.SetActive(true);
+    }
+
+    private void TheEndButtonOnClick()
+    {
+        ShowSplashScreen();
     }
 }

@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
             map01.SetActive(true);
             map02.SetActive(false);
 
-            levelMaxTimeInSeconds = 2;
+            levelMaxTimeInSeconds = 1;
             numPeople = 1;
             GameObject.Find("Camera Target").transform.position = new Vector3(9, 0, -4);
             Camera.main.orthographicSize = 6;
@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
             map01.SetActive(false);
             map02.SetActive(true);
 
-            levelMaxTimeInSeconds = 2;
+            levelMaxTimeInSeconds = 1;
             numPeople = 5;
             GameObject.Find("Camera Target").transform.position = new Vector3(54, 0, -24);
             Camera.main.orthographicSize = 10;

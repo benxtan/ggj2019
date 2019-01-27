@@ -147,7 +147,7 @@ public class TownManager : MonoBehaviour
                 else if (mapCharacter == "H")
                 {
                     CreateTile(grassTile, x, y);
-                    CreateTile(houseTiles[0], x, y);
+                    CreateTile(houseTiles[Random.Range(0, houseTiles.Length)], x, y);
                 }
                 else
                 {

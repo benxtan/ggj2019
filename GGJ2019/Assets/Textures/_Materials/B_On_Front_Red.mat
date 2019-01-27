@@ -10,7 +10,7 @@ Material:
   m_Name: B_On_Front_Red
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: -0.5}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cb7ad06f2de64439daeeaaebf0391745, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0e92bda49d5b845759200d7a16222331, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: -0.5}
     - _MetallicGlossMap:

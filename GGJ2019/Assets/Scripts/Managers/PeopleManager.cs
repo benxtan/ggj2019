@@ -49,7 +49,7 @@ public class PeopleManager : MonoBehaviour
     public static void UpdateLevelPeople()
     {
         PeopleManager.people = new List<GameObject>(GameObject.FindGameObjectsWithTag("People")).FindAll(g => g.activeSelf).ToArray();
-        Debug.Log("Num People: " + people.Length);
+        //Debug.Log("Num People: " + people.Length);
     }
 
     public static int GetNumActivePeople()
@@ -59,7 +59,6 @@ public class PeopleManager : MonoBehaviour
 
     public static int GetNumPeopleAtHome()
     {
-        Debug.Log(LevelManager.numLevelPeople + " aaa " + PeopleManager.GetNumActivePeople());
         return LevelManager.numLevelPeople - PeopleManager.GetNumActivePeople();
     }
 }

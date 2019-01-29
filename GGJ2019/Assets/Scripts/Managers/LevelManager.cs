@@ -55,7 +55,14 @@ public class LevelManager : MonoBehaviour
           
         // Initialise level
         numLevelPeople = 0;
-        if (level == 1)
+        if (Main.DEBUG_INFINITE_VERSION)
+        {
+            currentLevel = 3;
+            InitMap(2);
+            levelMaxTimeInSeconds = -1;
+            numLevelPeople = 99;
+        }
+        else if (level == 1)
         {
             InitMap(1);
             levelMaxTimeInSeconds = 60;
@@ -155,7 +162,7 @@ public class LevelManager : MonoBehaviour
             float timeElapsed = Time.time - LevelManager.levelStartTimeInSeconds;
             float timeRemaining = LevelManager.levelMaxTimeInSeconds - timeElapsed;
 
-            if (timeRemaining <= 0)
+            if (timeRemaining <= 0 && !Main.DEBUG_INFINITE_VERSION)
             {
                 isTimesUpDone = true;
 

@@ -65,7 +65,7 @@ public class Person : MonoBehaviour
                     other.gameObject.transform.Find("Audio/Home").GetComponent<AudioSource>().Play();
 
                     // Grass
-                    TownManager.CreateLitGrassTile(other.gameObject.transform.localPosition);
+                    TownManager.CreateLitGrassTile(other.gameObject.transform.position);
 
                     // Building
                     building.SetPersonHome();

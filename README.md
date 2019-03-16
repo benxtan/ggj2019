@@ -2,7 +2,14 @@
 
 by Super Ridiculous
 
+## BUGS
 
+* BUG: Lit up squares under populated homes are in the wrong position. They are shifted to the left by almost the width of the map (Level 3).
+* BUG: The dog doesn't always appear when you click
+
+## Features to add
+
+* Show cooldown for the dog
 
 ### Infinite version
 
